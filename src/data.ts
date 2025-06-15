@@ -39,7 +39,7 @@ export const educations = [
     logo: "tiet_logo.png",
     institution: "Thapar Institute of Engineering and Technology",
     degree: "B.Tech. in Computer Engineering",
-    period: "2024 - 2028",
+    period: "2024 – 2028",
     url: "https://www.thapar.edu",
   },
   {
@@ -47,7 +47,7 @@ export const educations = [
     logo: "",
     institution: "Thapar Polytechnic College",
     degree: "Diploma in CSE",
-    period: "2022 - 2024",
+    period: "2022 – 2024",
     url: "https://www.tpc.ac.in",
   },
   {

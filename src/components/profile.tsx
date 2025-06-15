@@ -9,6 +9,7 @@ import { about } from "@/data";
 import ContactSection from "./contact";
 import { ScrollAnimation } from "./animation";
 import { motion } from "framer-motion";
+import BlurShadow from "./blur-shadow";
 
 export default function Profile() {
   const { theme } = useTheme();
@@ -25,11 +26,11 @@ export default function Profile() {
           <img
             src={about.image}
             alt={about.name}
-            className="w-30 h-30 object-cover rounded-full shadow-md shadow-black/30"
+            className="w-32 h-32 object-cover rounded-full shadow-md shadow-black/30"
           />
         </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-col text-5xl font-semibold tracking-tight">
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-col text-5xl inter-bold">
             <span>Hey, I'm </span>
             <span>{about.name}</span>
           </div>
@@ -42,8 +43,8 @@ export default function Profile() {
             <TypewriterEffect text={about.title} speed={50} />
           </div>
           <p
-            className={`text-base ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
+            className={`text-base inter-regular mt-4 ${
+              theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}>
             {about.description}
           </p>
@@ -75,6 +76,11 @@ export default function Profile() {
             <ContactSection />
           </ScrollAnimation>
         </div>
+        <BlurShadow
+          className={`${
+            theme === "dark" ? "from-black/85" : "from-gray-100/50"
+          }`}
+        />
       </main>
       <div
         className={`

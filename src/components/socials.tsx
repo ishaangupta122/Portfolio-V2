@@ -62,7 +62,7 @@ export default function SocialBar() {
                 <link.icon.type className=" h-5 w-5 " />
               </Link>
             </TooltipTrigger>
-            <TooltipContent className="font-medium text-sm">
+            <TooltipContent className="inter-bold text-sm">
               {link.label}
             </TooltipContent>
           </Tooltip>
@@ -74,7 +74,7 @@ export default function SocialBar() {
               <ModeToggle />
             </div>
           </TooltipTrigger>
-          <TooltipContent className="font-medium text-sm">
+          <TooltipContent className="inter-bold text-sm">
             {theme === "dark" ? "Light Mode" : "Dark Mode"}
           </TooltipContent>
         </Tooltip>

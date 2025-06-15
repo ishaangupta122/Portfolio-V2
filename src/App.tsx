@@ -3,6 +3,7 @@ import Introduction from "./components/introduction";
 import InteractionGradient from "./components/interaction-gradient";
 import { useEffect } from "react";
 import { useTheme } from "./context/theme-provider";
+import "./App.css";
 
 const App = () => {
   const { theme } = useTheme();

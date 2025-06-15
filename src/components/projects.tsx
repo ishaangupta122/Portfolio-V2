@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { useTheme } from "@/context/theme-provider";
 import { projects } from "@/data";
 import { FaGlobe, FaGithub } from "react-icons/fa";
@@ -8,17 +7,16 @@ export default function Projects() {
   const { theme } = useTheme();
   return (
     <section className="max-w-2xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6">Projects</h2>
+      <h2 className="text-2xl inter-bold mb-3">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project) => (
-          <Card
+          <div
             key={project.id}
             className={`${
               theme === "dark"
-                ? "bg-black/20 text-white"
-                : "bg-white/20 text-black"
-            } p-0 flex flex-col`} // Make the Card flex column
-          >
+                ? "bg-black/20 text-white border-white/10"
+                : "bg-white/20 text-black border-transparent"
+            } p-0 m-0 flex flex-col border shadow-md shadow-black/10 rounded-lg`}>
             <div
               className={`relative w-full h-48 px-4 pt-5 rounded-t-lg ${
                 theme === "dark"
@@ -32,15 +30,15 @@ export default function Projects() {
               />
             </div>
 
-            <CardContent className="p-4 flex flex-col flex-grow">
+            <div className="p-3 mt-0 flex flex-col flex-grow">
               <div>
-                <h3 className="text-lg font-semibold mb-2 font-mono tracking-tighter">
+                <h3 className="text-base inter-semibold mb-1">
                   {project.title}
                 </h3>
                 <p
                   className={`${
                     theme === "dark" ? "text-gray-400" : "text-dark-600"
-                  } text-xs mb-3`}>
+                  } text-xs inter-regular mb-3`}>
                   {project.description}
                 </p>
 
@@ -52,24 +50,24 @@ export default function Projects() {
                         theme === "dark"
                           ? "bg-slate-900 border-slate-800 text-white"
                           : "bg-white border-gray-200 text-black"
-                      } p-1 rounded-md text-xs border font-mono tracking-tighter`}>
+                      } px-2 py-1 rounded-md text-xs border inter-regular`}>
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="flex gap-2 font-mono uppercase font-semibold mt-auto">
+              <div className="flex gap-2 inter-semibold text-xs mt-auto">
                 {project.websiteUrl && (
                   <Link
                     className={`${
                       theme === "dark"
                         ? "bg-white text-black"
                         : "bg-black text-white"
-                    } flex items-center justify-center gap-2 rounded-md cursor-pointer px-2 py-1 text-sm hover:scale-105 transition-all duration-200`}
+                    } flex items-center justify-center gap-1 rounded-md cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
                     to={project.websiteUrl}
                     target="_blank">
-                    <FaGlobe size={16} />
+                    <FaGlobe size={14} />
                     Website
                   </Link>
                 )}
@@ -79,16 +77,16 @@ export default function Projects() {
                       theme === "dark"
                         ? "bg-white text-black"
                         : "bg-black text-white"
-                    } flex items-center justify-center gap-2 rounded-md cursor-pointer px-2 py-1 text-sm hover:scale-105 transition-all duration-200`}
+                    } flex items-center justify-center gap-1 rounded-md cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
                     to={project.sourceUrl}
                     target="_blank">
-                    <FaGithub size={16} />
+                    <FaGithub size={14} />
                     Source
                   </Link>
                 )}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         ))}
       </div>
     </section>
