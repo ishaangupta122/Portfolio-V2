@@ -21,7 +21,6 @@ It highlights my projects, skills, and experience with a clean design and smooth
 1. Clone the repository:
    ```bash
    git clone https://github.com/ishaangupta122/Portfolio-V2.git
-   cd Portfolio-V2
    ```
 2. Change Directory:
    ```bash
@@ -35,4 +34,4 @@ It highlights my projects, skills, and experience with a clean design and smooth
    ```bash
    npm run dev
    ```
-5. All Set 🚀
+5. All Set, the portfolio will run on the localhost 🚀
