@@ -21,7 +21,7 @@ export default function SocialBar() {
     {
       icon: <FaRegFileAlt />,
       label: "Resume",
-      url: "/ishaan-gupta-resume.pdf",
+      url: "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",
     },
     {
       icon: <FaEnvelope />,
