@@ -1,3 +1,4 @@
+import { contact } from "@/data";
 import { Link } from "react-router-dom";
 
 export default function ContactSection() {
@@ -7,24 +8,24 @@ export default function ContactSection() {
       <div className="text-base tracking-tight mb-2">
         Want to chat ? Just shoot me a DM on{" "}
         <Link
-          to="https://twitter.com/"
+          to={contact.twitter}
           target="_blank"
           className="text-blue-500 underline">
           Twitter
         </Link>{" "}
         /{" "}
         <Link
-          to="https://www.linkedin.com/"
+          to={contact.linkedin}
           target="_blank"
           className="text-blue-500 underline">
           LinkedIn
         </Link>{" "}
         , or send me an email at{" "}
         <Link
-          to="mailto:ishaang2209@gmail.com"
+          to={`mailto:${contact.mail}`}
           target="_blank"
           className="text-blue-500 underline">
-          ishaang2209@gmail.com
+          {contact.mail}
         </Link>{" "}
         .
       </div>

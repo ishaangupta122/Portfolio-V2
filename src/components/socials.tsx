@@ -7,7 +7,13 @@ import {
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./theme-toggle";
 import { useTheme } from "@/context/theme-provider";
-import { FaGithub, FaLinkedin, FaRegFileAlt, FaTwitter } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaRegFileAlt,
+  FaTwitter,
+} from "react-icons/fa";
 
 export default function SocialBar() {
   const { theme } = useTheme();
@@ -18,19 +24,24 @@ export default function SocialBar() {
       url: "/ishaan-gupta-resume.pdf",
     },
     {
+      icon: <FaEnvelope />,
+      label: "Mail",
+      url: "mailto:ishaang2209@gmail.com",
+    },
+    {
       icon: <FaGithub />,
       label: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/ishaangupta122",
     },
     {
       icon: <FaTwitter />,
       label: "Twitter",
-      url: "https://twitter.com/yourusername",
+      url: "https://twitter.com/ishaangupta05",
     },
     {
       icon: <FaLinkedin />,
-      label: "Source",
-      url: "https://github.com/yourusername/yourproject",
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/ishaangupta05/",
     },
   ];
 
@@ -43,7 +54,7 @@ export default function SocialBar() {
               <Link
                 to={link.url}
                 target="_blank"
-                className={`p-2 rounded-md backdrop-blur-lg  ${
+                className={`p-2 rounded-md backdrop-blur-lg hover:-translate-y-1 transition-all duration-200 ${
                   theme === "dark"
                     ? "bg-black/30 text-gray-400 hover:text-white"
                     : "bg-slate-300/30 text-gray-600 hover:text-black"
@@ -64,7 +75,7 @@ export default function SocialBar() {
             </div>
           </TooltipTrigger>
           <TooltipContent className="font-medium text-sm">
-            Toggle Theme
+            {theme === "dark" ? "Light Mode" : "Dark Mode"}
           </TooltipContent>
         </Tooltip>
       </div>

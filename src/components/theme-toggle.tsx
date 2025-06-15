@@ -18,7 +18,7 @@ export function ModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className={`p-2 rounded-md backdrop-blur-lg cursor-pointer  ${
+      className={`p-2 rounded-md backdrop-blur-lg cursor-pointer hover:-translate-y-1 transition-all duration-200  ${
         theme === "dark"
           ? "bg-black/30 text-gray-400 hover:text-white"
           : "bg-slate-300/30 text-gray-600 hover:text-black"
@@ -27,13 +27,13 @@ export function ModeToggle() {
       {theme === "dark" ? (
         <Sun
           className={`w-5 h-5 transition-transform duration-200 ${
-            isRotating ? "rotate-180" : ""
+            isRotating ? "rotate-360" : ""
           }`}
         />
       ) : (
         <Moon
           className={`w-5 h-5 transition-transform duration-200 ${
-            isRotating ? "rotate-180" : ""
+            isRotating ? "-rotate-360" : "rotate-0"
           }`}
         />
       )}
