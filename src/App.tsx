@@ -11,7 +11,7 @@ const App = () => {
       "favicon"
     ) as HTMLLinkElement | null;
     if (favicon) {
-      favicon.href = theme === "dark" ? "/user_dark.jpg" : "/user_light.png";
+      favicon.href = theme === "dark" ? "/user_dark.png" : "/user_light.png";
     }
   }, [theme]);
 
