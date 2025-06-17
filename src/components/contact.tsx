@@ -1,9 +1,9 @@
 import { useTheme } from "@/context/theme-provider";
-import { contact } from "@/data";
+import { DATA } from "@/data";
 import { Link } from "react-router-dom";
 import { ScrollAnimation } from "./scroll-animation";
 
-export default function ContactSection() {
+export default function Contact() {
   const { theme } = useTheme();
   return (
     <section className="flex flex-col items-center justify-center py-12 px-4 text-center max-w-2xl mx-auto">
@@ -17,24 +17,24 @@ export default function ContactSection() {
           }`}>
           Want to chat ? Just shoot me a DM on{" "}
           <Link
-            to={contact.twitter}
+            to={DATA.contact.twitter}
             target="_blank"
             className="text-blue-500 hover:underline">
             Twitter
           </Link>{" "}
           /{" "}
           <Link
-            to={contact.linkedin}
+            to={DATA.contact.linkedin}
             target="_blank"
             className="text-blue-500 hover:underline">
             LinkedIn
           </Link>
           , or send me an email at{" "}
           <Link
-            to={`mailto:${contact.mail}`}
+            to={`mailto:${DATA.contact.mail}`}
             target="_blank"
             className="text-blue-500 hover:underline">
-            {contact.mail}
+            {DATA.contact.mail}
           </Link>
           .
         </div>

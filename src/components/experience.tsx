@@ -5,7 +5,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { useTheme } from "@/context/theme-provider";
-import { experiences } from "@/data";
+import { DATA } from "@/data";
 import { Minus } from "lucide-react";
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
@@ -34,12 +34,9 @@ export default function Experience() {
 
           setOpenIndices(indices);
         }}>
-        {experiences.map((exp) => (
-          <ScrollAnimation>
-            <AccordionItem
-              key={exp.id}
-              value={`item-${exp.id}`}
-              className="border-none">
+        {DATA.experiences.map((exp: any) => (
+          <ScrollAnimation key={exp.id}>
+            <AccordionItem value={`item-${exp.id}`} className="border-none">
               <div className="flex items-start gap-4 relative">
                 <Link to={exp.url} target="_blank">
                   <img
@@ -76,7 +73,7 @@ export default function Experience() {
                       theme === "dark" ? "text-gray-300" : "text-dark-500"
                     }`}>
                     <ul className="list-disc pl-5 space-y-1">
-                      {exp.description.map((item, i) => (
+                      {exp.description.map((item: any, i: any) => (
                         <li
                           key={i}
                           className={`transform transition duration-500 ease-out ${

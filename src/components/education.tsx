@@ -1,5 +1,5 @@
 import { useTheme } from "@/context/theme-provider";
-import { educations } from "@/data";
+import { DATA } from "@/data";
 import { Minus } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollAnimation } from "./scroll-animation";
@@ -12,7 +12,7 @@ export default function Education() {
         <h2 className="text-2xl inter-bold mb-2">Education</h2>
       </ScrollAnimation>
       <div className="space-y-2">
-        {educations.map((edu) => (
+        {DATA.educations.map((edu: any) => (
           <ScrollAnimation>
             <Link
               key={edu.id}

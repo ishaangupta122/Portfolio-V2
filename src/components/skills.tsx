@@ -1,5 +1,5 @@
 import { useTheme } from "@/context/theme-provider";
-import { skills } from "@/data";
+import { DATA } from "@/data";
 import { ScrollAnimation } from "./scroll-animation";
 import { FadeBlurStaggerItem } from "./stagger-effect";
 
@@ -14,7 +14,7 @@ export default function Skills() {
 
       <ScrollAnimation>
         <div className="flex flex-wrap gap-1">
-          {skills.map((skill, i) => (
+          {DATA.skills.map((skill: any, i: any) => (
             <FadeBlurStaggerItem key={skill.id} index={i}>
               <div
                 className={`${

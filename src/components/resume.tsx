@@ -1,8 +1,9 @@
 import Projects from "@/components/projects";
-import ContactSection from "./contact";
 import Experience from "@/components/experience";
 import Education from "@/components/education";
 import Skills from "@/components/skills";
+import Contact from "./contact";
+import Footer from "./footer";
 import { BlurShadow } from "./blur-shadow";
 import { useTheme } from "@/context/theme-provider";
 
@@ -16,7 +17,8 @@ export default function Resume() {
         <Education />
         <Skills />
         <Projects />
-        <ContactSection />
+        <Contact />
+        <Footer />
       </div>
       <BlurShadow
         className={`${theme === "dark" ? "from-black/85" : "from-black/30"}`}
