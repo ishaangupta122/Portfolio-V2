@@ -11,6 +11,7 @@ import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ScrollAnimation } from "./scroll-animation";
+import InitialsAvatar from "./initials-avatar";
 
 export default function Experience() {
   const [openIndices, setOpenIndices] = useState<number[]>([]);
@@ -39,11 +40,18 @@ export default function Experience() {
             <AccordionItem value={`item-${exp.id}`} className="border-none">
               <div className="flex items-start gap-4 relative">
                 <Link to={exp.url} target="_blank">
-                  <img
-                    src={exp.image || "/experience_img.jpg"}
-                    alt={exp.company}
-                    className="w-11 h-11 rounded-full object-cover hover:scale-105 transition-all duration-200"
-                  />
+                  {exp.image !== "" ? (
+                    <img
+                      src={exp.image}
+                      alt={exp.company}
+                      className="w-11 h-11 rounded-full object-cover hover:scale-105 transition-all duration-200 shadow-md shadow-black/10"
+                    />
+                  ) : (
+                    <InitialsAvatar
+                      name={exp.company}
+                      style="w-11 h-11 transition-transform duration-200 ease-in-out hover:scale-105 shadow-md shadow-black/10"
+                    />
+                  )}
                 </Link>
                 <div className="flex-1 pb-4">
                   <div className="flex flex-wrap items-center gap-2 justify-between">

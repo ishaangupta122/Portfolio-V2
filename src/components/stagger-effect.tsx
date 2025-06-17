@@ -1,23 +1,9 @@
 import { motion, easeOut, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
-
-interface FadeBlurStaggerItemProps {
-  children: ReactNode;
-  index: number;
-  delayPerItem?: number;
-  duration?: number;
-}
-
-interface StaggerProps {
-  children: ReactNode;
-  stagger?: number;
-  className?: string;
-}
-
-interface StaggerItemProps {
-  children: ReactNode;
-  className?: string;
-}
+import type {
+  FadeBlurStaggerItemProps,
+  StaggerItemProps,
+  StaggerProps,
+} from "@/types";
 
 export const FadeBlurStaggerItem = ({
   children,
