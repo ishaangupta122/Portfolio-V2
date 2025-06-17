@@ -1,7 +1,8 @@
-import { FaEnvelope, FaGithub, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
+import { FaRegFileAlt, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import type { Data } from "./types";
 
-export const DATA = {
+export const DATA: Data = {
   about: {
     image: "ishaan_img.jpeg",
     name: "Ishaan Gupta",
