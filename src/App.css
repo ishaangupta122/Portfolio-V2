@@ -3,6 +3,7 @@
 :root {
   --inter-font-family: "Inter", sans-serif;
 }
+
 .inter-bold {
   font-family: var(--inter-font-family);
   font-weight: 700;

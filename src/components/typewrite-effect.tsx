@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 interface TypewriterProps {
   text: string;
   speed?: number;
-  pause?: number; // Optional pause before deleting
+  pause?: number;
 }
 
 const TypewriterEffect = ({

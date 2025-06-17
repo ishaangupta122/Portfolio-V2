@@ -7,13 +7,8 @@ import {
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./theme-toggle";
 import { useTheme } from "@/context/theme-provider";
-import {
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-  FaRegFileAlt,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function SocialBar() {
   const { theme } = useTheme();
@@ -34,7 +29,7 @@ export default function SocialBar() {
       url: "https://github.com/ishaangupta122",
     },
     {
-      icon: <FaTwitter />,
+      icon: <FaXTwitter />,
       label: "Twitter",
       url: "https://twitter.com/ishaangupta05",
     },
@@ -56,10 +51,10 @@ export default function SocialBar() {
                 target="_blank"
                 className={`p-2 rounded-md backdrop-blur-lg hover:-translate-y-1 transition-all duration-200 ${
                   theme === "dark"
-                    ? "bg-black/30 text-gray-400 hover:text-white"
-                    : "bg-slate-300/30 text-gray-600 hover:text-black"
+                    ? "bg-black/30 text-gray-300 hover:text-white"
+                    : "bg-slate-400/20 text-gray-600 hover:text-black"
                 }`}>
-                <link.icon.type className=" h-5 w-5 " />
+                <link.icon.type className="h-5 w-5" />
               </Link>
             </TooltipTrigger>
             <TooltipContent className="inter-bold text-sm">
