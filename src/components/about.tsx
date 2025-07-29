@@ -32,12 +32,12 @@ export default function AboutSection() {
         <img
           src={DATA.about.image}
           alt={DATA.about.name}
-          className="w-32 h-32 object-cover rounded-full shadow-md shadow-black/30"
+          className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full shadow-md shadow-black/30"
         />
       </Item>
 
       {/* Text */}
-      <div className="flex flex-col gap-2">
+      <div className="mt-5 flex flex-col gap-3">
         <Item>
           <div className="flex flex-col text-5xl inter-bold tracking-tight">
             <span>Hey, I'm </span>
@@ -46,7 +46,7 @@ export default function AboutSection() {
         </Item>
         <Item>
           <div
-            className={`text-3xl inter-bold tracking-tight bg-gradient-to-r bg-clip-text text-transparent ${
+            className={`text-4xl inter-bold tracking-tight bg-gradient-to-r bg-clip-text text-transparent ${
               theme === "dark"
                 ? "from-[#3be6f6] to-[#093adc]"
                 : "from-[#fc894a] to-[#8548ff]"
@@ -56,7 +56,7 @@ export default function AboutSection() {
         </Item>
         <Item>
           <p
-            className={`text-base inter-regular mt-3 ${
+            className={`text-lg inter-regular mt-3 ${
               theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}>
             {DATA.about.description}
@@ -65,7 +65,7 @@ export default function AboutSection() {
       </div>
 
       {/* Social Bar */}
-      <Item className="mt-auto">
+      <Item className="">
         <SocialBar />
       </Item>
     </Container>

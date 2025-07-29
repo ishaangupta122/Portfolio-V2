@@ -59,7 +59,7 @@ export default function Experience() {
                       {exp.company}
                     </span>
                     <span
-                      className={`text-sm font-mono  ${
+                      className={`text-sm font-mono tracking-tight ${
                         theme === "dark" ? "text-gray-400" : "text-dark-500"
                       } uppercase tracking-tight`}>
                       {exp.period}
@@ -71,7 +71,7 @@ export default function Experience() {
                         ? "[&>svg]:text-white"
                         : "[&>svg]:text-black"
                     }`}>
-                    <div className="inter-regular flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1 italic">
+                    <div className="inter-regular flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1">
                       <Minus /> {exp.role}
                       <FaCheckCircle className="ml-1 w-3 h-3 text-green-500" />
                     </div>

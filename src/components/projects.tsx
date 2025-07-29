@@ -114,7 +114,7 @@ export function ProjectCard({ project }: { project: any }) {
         <h3 className="text-base inter-semibold my-1">{project.title}</h3>
         <p
           className={`${
-            theme === "dark" ? "text-gray-400" : "text-dark-600"
+            theme === "dark" ? "text-gray-300" : "text-dark-600"
           } text-xs inter-regular mb-3`}>
           {project.description}
         </p>
@@ -125,9 +125,9 @@ export function ProjectCard({ project }: { project: any }) {
               key={i}
               className={`${
                 theme === "dark"
-                  ? "bg-slate-900 border-slate-800 text-white"
+                  ? "bg-slate-800 border-slate-700 text-white"
                   : "bg-white border-gray-200 text-black"
-              } px-2 py-1 rounded-md text-xs border inter-regular`}>
+              } px-2 py-1 rounded-sm text-xs border inter-regular`}>
               {tech}
             </span>
           ))}

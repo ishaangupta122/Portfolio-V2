@@ -18,10 +18,10 @@ export function ModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className={`p-2 rounded-md backdrop-blur-lg cursor-pointer hover:-translate-y-1 transition-all duration-200  ${
+      className={`p-2 rounded-md backdrop-blur-lg cursor-pointer hover:-translate-y-1 transition-all duration-200 border ${
         theme === "dark"
-          ? "bg-black/30 text-gray-300 hover:text-white"
-          : "bg-slate-400/20 text-gray-600 hover:text-black"
+          ? "bg-slate-800 border-gray-300/10 text-gray-300 hover:text-white"
+          : "bg-slate-400/20 border-gray-600/10 text-gray-600 hover:text-black"
       }`}
       disabled={isRotating}>
       {theme === "dark" ? (
