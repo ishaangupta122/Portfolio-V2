@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useTheme } from "./context/theme-provider";
 import InteractionGradient from "./components/interaction-gradient";
 import Profile from "./components/profile";
+import { FixedGradient } from "./components/fixed-gradient";
 
 const App = () => {
   const { theme } = useTheme();
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <Router>
+      <FixedGradient />
       <InteractionGradient />
       <Routes>
         <Route path="/" element={<Profile />} />

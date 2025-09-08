@@ -1,5 +1,5 @@
 import Projects from "@/components/projects";
-import Experience from "@/components/experience";
+// import Experience from "@/components/experience";
 import Education from "@/components/education";
 import Skills from "@/components/skills";
 import Contact from "./contact";
@@ -13,7 +13,7 @@ export default function Resume() {
   return (
     <main className="w-full lg:ml-auto lg:w-[60%] px-6 py-14 max-w-3xl lg:mb-10">
       <div className="space-y-10">
-        <Experience />
+        {/* <Experience /> */}
         <Education />
         <Skills />
         <Projects />
