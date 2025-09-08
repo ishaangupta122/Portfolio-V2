@@ -8,7 +8,7 @@ export const FixedGradient = () => {
       <div
         className={`
           fixed -top-30 -right-10
-          w-80 h-80
+          w-120 h-80
           blur-3xl
           pointer-events-none
           z-[-1]

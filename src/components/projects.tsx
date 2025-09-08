@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section className="max-w-2xl mx-auto">
       <ScrollAnimation>
-        <h2 className="text-2xl inter-bold mb-3">Projects</h2>
+        <h2 className={`text-2xl inter-bold mb-3`}>Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {DATA.projects.map((project: any) => (
             <ProjectCard key={project.id} project={project} />

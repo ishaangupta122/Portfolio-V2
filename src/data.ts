@@ -4,11 +4,10 @@ import type { Data } from "./types";
 
 export const DATA: Data = {
   about: {
-    image: "ishaan_img.jpeg",
+    image: "ishaan_img_2.jpg",
     name: "Ishaan Gupta",
-    title: "Web Developer",
-    description:
-      "Full-stack developer passionate about building modern web applications.",
+    title: "Frontend Developer",
+    description: "I'm Passionate about building modern web applications.",
     resume:
       "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",
     mail: "ishaang2209@gmail.com",
@@ -204,11 +203,11 @@ export const DATA: Data = {
   },
 
   socials: [
-    {
-      icon: FaRegFileAlt,
-      label: "Resume",
-      url: "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",
-    },
+    // {
+    //   icon: FaRegFileAlt,
+    //   label: "Resume",
+    //   url: "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",
+    // },
     {
       icon: FaEnvelope,
       label: "Mail",
@@ -221,7 +220,7 @@ export const DATA: Data = {
     },
     {
       icon: FaXTwitter,
-      label: "Twitter",
+      label: "X",
       url: "https://twitter.com/ishaangupta05",
     },
     {

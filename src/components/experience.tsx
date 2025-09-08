@@ -7,7 +7,7 @@ import {
 import { useTheme } from "@/context/theme-provider";
 import { DATA } from "@/data";
 import { Minus } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ScrollAnimation } from "./scroll-animation";
@@ -15,11 +15,43 @@ import InitialsAvatar from "./initials-avatar";
 
 export default function Experience() {
   const [openIndices, setOpenIndices] = useState<number[]>([]);
+  const [visibleLines, setVisibleLines] = useState<{ [key: number]: number }>(
+    {}
+  );
   const { theme } = useTheme();
+  useEffect(() => {
+    openIndices.forEach((id) => {
+      if (visibleLines[id] === undefined) {
+        setVisibleLines((prev) => ({ ...prev, [id]: 0 }));
+        const exp = DATA.experiences.find((e: any) => e.id === id);
+        if (exp) {
+          let current = 0;
+          const interval = setInterval(() => {
+            current++;
+            setVisibleLines((prev) => ({ ...prev, [id]: current }));
+            if (current >= exp.description.length) {
+              clearInterval(interval);
+            }
+          }, 120);
+        }
+      }
+    });
+    Object.keys(visibleLines).forEach((id) => {
+      if (!openIndices.includes(Number(id))) {
+        setVisibleLines((prev) => {
+          const copy = { ...prev };
+          delete copy[Number(id)];
+          return copy;
+        });
+      }
+    });
+    // eslint-disable-next-line
+  }, [openIndices]);
+
   return (
     <div className="max-w-2xl mx-auto">
       <ScrollAnimation>
-        <h2 className="text-2xl inter-bold mb-4">Experience</h2>
+        <h2 className={`text-2xl inter-bold mb-4`}>Experience</h2>
       </ScrollAnimation>
       <Accordion
         type="multiple"
@@ -55,13 +87,16 @@ export default function Experience() {
                 </Link>
                 <div className="flex-1 pb-4">
                   <div className="flex flex-wrap items-center gap-2 justify-between">
-                    <span className="text-base inter-semibold">
+                    <span
+                      className={`text-base inter-semibold ${
+                        theme === "dark" ? "text-[#d8dee6]" : "text-black"
+                      }`}>
                       {exp.company}
                     </span>
                     <span
-                      className={`text-sm font-mono tracking-tight ${
-                        theme === "dark" ? "text-gray-400" : "text-dark-500"
-                      } uppercase tracking-tight`}>
+                      className={`text-xs inter-semibold ${
+                        theme === "dark" ? "text-gray-300/80" : "text-dark-500"
+                      } uppercase`}>
                       {exp.period}
                     </span>
                   </div>
@@ -78,25 +113,21 @@ export default function Experience() {
                   </AccordionTrigger>
                   <AccordionContent
                     className={`mt-1 text-sm ${
-                      theme === "dark" ? "text-gray-300" : "text-dark-500"
+                      theme === "dark" ? "text-[#d8dee6]" : "text-dark-500"
                     }`}>
                     <ul className="list-disc pl-5 space-y-1">
-                      {exp.description.map((item: any, i: any) => (
-                        <li
-                          key={i}
-                          className={`transform transition duration-500 ease-out ${
-                            openIndices.includes(exp.id)
-                              ? "opacity-100 translate-x-1"
-                              : "opacity-0 -translate-x-3"
-                          }`}
-                          style={{
-                            transitionDelay: `${
-                              openIndices.includes(exp.id) ? i * 100 : 0
-                            }ms`,
-                          }}>
-                          {item}
-                        </li>
-                      ))}
+                      {openIndices.includes(exp.id) &&
+                        exp.description.map((item: any, i: any) => (
+                          <li
+                            key={i}
+                            className={`transition-all duration-200 ease-out ${
+                              visibleLines[exp.id] > i
+                                ? "opacity-100 translate-x-0"
+                                : "opacity-0 -translate-x-4"
+                            }`}>
+                            {item}
+                          </li>
+                        ))}
                     </ul>
                   </AccordionContent>
                 </div>

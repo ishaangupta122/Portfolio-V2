@@ -10,7 +10,7 @@ export default function Education() {
   return (
     <section className="max-w-2xl mx-auto">
       <ScrollAnimation>
-        <h2 className="text-2xl inter-bold mb-2">Education</h2>
+        <h2 className={`text-2xl inter-bold mb-2`}>Education</h2>
       </ScrollAnimation>
       <div className="space-y-2">
         {DATA.educations.map((edu: any) => (
@@ -36,17 +36,23 @@ export default function Education() {
               </div>
               <div className="flex flex-col w-full p-0">
                 <div className="flex flex-col md:flex-row md:justify-between justify-start md:items-center gap-1">
-                  <h3 className="inter-medium text-base transition-transform duration-300 ease-in-out group-hover:translate-x-1">
+                  <h3
+                    className={`inter-medium text-base transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
+                      theme === "dark" ? "text-[#d8dee6]" : "text-dark-500"
+                    }`}>
                     {edu.institution}
                   </h3>
                   <span
-                    className={`text-sm font-mono tracking-tight ${
-                      theme === "dark" ? "text-gray-400" : "text-dark-500"
-                    } uppercase tracking-tight`}>
+                    className={`text-xs  ${
+                      theme === "dark" ? "text-gray-300/80" : "text-dark-500"
+                    } uppercase inter-semibold`}>
                     {edu.period}
                   </span>
                 </div>
-                <p className="text-sm inter-regular flex items-center justify-start gap-1 md:mt-0 mt-1 transition-transform duration-300 ease-in-out group-hover:translate-x-1">
+                <p
+                  className={`text-sm inter-regular flex items-center justify-start gap-1 md:mt-0 mt-1 transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
+                    theme === "dark" ? "text-[#d8dee6]" : "text-dark-500"
+                  }`}>
                   <Minus /> {edu.degree}
                 </p>
               </div>

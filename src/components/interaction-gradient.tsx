@@ -1,5 +1,5 @@
 import { useTheme } from "@/context/theme-provider";
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const InteractionGradient = () => {
@@ -11,11 +11,6 @@ const InteractionGradient = () => {
   // motion values avoid re-renders
   const x = useMotionValue(0.5);
   const y = useMotionValue(0.5);
-
-  // Add spring animation for smooth movement
-  const springConfig = { damping: 20, stiffness: 100 };
-  const springX = useSpring(x, springConfig);
-  const springY = useSpring(y, springConfig);
 
   useEffect(() => {
     // Check if the device has a fine pointer (like mouse)
@@ -45,22 +40,22 @@ const InteractionGradient = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [x, y, isPointerDevice]);
 
-  // map motion values to gradient string
-  const background = useTransform([springX, springY], ([x, y]: number[]) => {
+  // map motion values to gradient string (no spring, instant tracking)
+  const background = useTransform([x, y], ([x, y]: number[]) => {
     if (theme === "light") {
       return `
         radial-gradient(
           circle at ${x * 100}% ${y * 100}%,
-          rgba(255, 200, 180, 0.5) 0%,
-          #F4F0F0 40%
+          rgba(255, 200, 180, 0.5) -30%,
+          #F4F0F0 30%
         )
       `;
     } else {
       return `
         radial-gradient(
           circle at ${x * 100}% ${y * 100}%,
-          rgba(0, 128, 255, 0.3) 0%,
-          rgba(0, 128, 255, 0) 50%
+          rgba(0, 128, 255, 0.3) -40%,
+          rgba(0, 128, 255, 0) 70%
         )
       `;
     }

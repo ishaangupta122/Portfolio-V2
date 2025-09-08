@@ -23,8 +23,8 @@ export default function SocialBar() {
                 target="_blank"
                 className={`p-2 rounded-md backdrop-blur-lg hover:-translate-y-1 transition-all duration-200 border ${
                   theme === "dark"
-                    ? "bg-slate-800 border-gray-300/10 text-gray-300 hover:text-white"
-                    : "bg-slate-400/20 border-gray-600/10 text-gray-600 hover:text-black"
+                    ? "bg-slate-900 border-gray-300/10 text-gray-200 hover:text-white"
+                    : "bg-slate-400/20 border-gray-600/10 text-gray-700 hover:text-black"
                 }`}>
                 {social.icon && <social.icon className="h-5 w-5" />}
               </Link>
