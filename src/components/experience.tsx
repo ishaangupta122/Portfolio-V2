@@ -106,7 +106,7 @@ export default function Experience() {
                         ? "[&>svg]:text-white"
                         : "[&>svg]:text-black"
                     }`}>
-                    <div className="inter-regular flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1">
+                    <div className="inter-medium flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1 dark:text-[#d8dee6]">
                       <Minus /> {exp.role}
                       <FaCheckCircle className="ml-1 w-3 h-3 text-green-500" />
                     </div>
