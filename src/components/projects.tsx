@@ -1,4 +1,4 @@
-import { FaGlobe, FaGithub } from "react-icons/fa";
+import { FaGlobe, FaGithub, FaRegImage, FaPlayCircle } from "react-icons/fa";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -24,25 +24,19 @@ export default function Projects() {
 export function ProjectCard({ project }: { project: any }) {
   const { theme } = useTheme();
   const [current, setCurrent] = useState(0);
-  const totalImages = project.images?.length || 0;
-  const totalVideos = project.videos?.length || 0;
-  const totalMedia = totalImages + totalVideos;
+  // Combine videos first, then images
+  const mediaList = [
+    ...(project.videos || []).map((src: string) => ({ type: "video", src })),
+    ...(project.images || []).map((src: string) => ({ type: "image", src })),
+  ];
+  const totalMedia = mediaList.length;
   const hasNavigation = totalMedia > 1;
-
-  const getMediaAt = (index: number) => {
-    if (index < totalImages) {
-      return { type: "image", src: project.images[index] };
-    } else {
-      const videoIndex = index - totalImages;
-      return { type: "video", src: project.videos[videoIndex] };
-    }
-  };
 
   const next = () => setCurrent((prev: number) => (prev + 1) % totalMedia);
   const prev = () =>
     setCurrent((prev: number) => (prev - 1 + totalMedia) % totalMedia);
 
-  const media = getMediaAt(current);
+  const media = mediaList[current];
 
   return (
     <div
@@ -59,21 +53,35 @@ export function ProjectCard({ project }: { project: any }) {
             : "bg-gradient-to-r from-[#EDA47D] to-[#A079EC]"
         }`}
         style={{ height: "220px" }}>
-        <div className="relative h-full w-full overflow-hidden rounded-t-lg">
+        <div className="relative h-full w-full overflow-hidden rounded-t-lg flex items-center justify-center">
           {media.type === "image" ? (
-            <img
-              key={media.src}
-              src={media.src}
-              alt={project.title}
-              className="w-full h-full object-cover rounded-t-lg transition-opacity duration-700"
-            />
+            <>
+              <img
+                key={media.src}
+                src={media.src}
+                alt={project.title}
+                className="w-full h-full object-fill rounded-t-lg transition-opacity duration-700 bg-black/60"
+                style={{ maxHeight: "220px", maxWidth: "100%" }}
+              />
+              <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
+                <FaRegImage size={16} />
+              </span>
+            </>
           ) : (
-            <video
-              key={media.src}
-              src={media.src}
-              controls
-              className="w-full h-full object-cover rounded-t-lg transition-opacity duration-700"
-            />
+            <>
+              <video
+                key={media.src}
+                src={media.src}
+                autoPlay
+                loop
+                muted
+                className="w-full h-full object-fill rounded-t-lg transition-opacity duration-700 bg-black/60"
+                style={{ maxHeight: "220px", maxWidth: "100%" }}
+              />
+              <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
+                <FaPlayCircle size={16} />
+              </span>
+            </>
           )}
 
           {/* Nav buttons */}
@@ -81,12 +89,12 @@ export function ProjectCard({ project }: { project: any }) {
             <>
               <button
                 onClick={prev}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1 rounded-full transition-transform duration-300 hover:scale-110 cursor-pointer">
+                className="absolute right-10 top-2 bg-black/40 hover:bg-black/70 text-white p-0.5 rounded-full transition-transform duration-300 hover:scale-110 cursor-pointer">
                 <HiChevronLeft size={20} />
               </button>
               <button
                 onClick={next}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1 rounded-full transition-transform duration-300 hover:scale-110 cursor-pointer">
+                className="absolute right-2 top-2 bg-black/40 hover:bg-black/70 text-white p-0.5 rounded-full transition-transform duration-300 hover:scale-110 cursor-pointer">
                 <HiChevronRight size={20} />
               </button>
             </>
