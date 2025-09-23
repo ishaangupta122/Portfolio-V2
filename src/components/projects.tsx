@@ -133,8 +133,8 @@ export function ProjectCard({ project }: { project: any }) {
               key={i}
               className={`${
                 theme === "dark"
-                  ? "bg-slate-800 border-slate-700 text-white"
-                  : "bg-white border-gray-200 text-black"
+                  ? "bg-slate-800/70 border-gray-300/10 text-gray-200"
+                  : "bg-slate-400/10 border-gray-600/20 text-gray-900"
               } px-2 py-1 rounded-sm text-xs border inter-regular`}>
               {tech}
             </span>

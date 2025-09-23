@@ -163,7 +163,7 @@ export default function AboutSection() {
 
   return (
     <>
-      <Container className="h-full w-full lg:w-[35%] lg:max-w-xl flex flex-col gap-4 px-8 lg:py-14 pt-14 pb-6 lg:fixed">
+      <Container className="h-full w-full lg:w-[35%] lg:max-w-xl flex flex-col gap-4 px-6 lg:py-14 pt-14 lg:fixed">
         {/* Image with interactive hover */}
         <div className="w-full">
           <img
@@ -183,12 +183,12 @@ export default function AboutSection() {
                 theme === "dark" ? "text-[#E2E8F0]" : "text-black"
               }`}>
               <span className="text-[2.6rem]">Hey, I'm </span>
-              <span>{DATA.about.name}</span>
+              <span className="text-[2.6rem]">{DATA.about.name}</span>
             </div>
           </Item>
           <Item>
             <div
-              className={`text-4xl inter-bold tracking-tight bg-gradient-to-r bg-clip-text text-transparent ${
+              className={`text-4xl inter-semibold tracking-tight bg-gradient-to-r bg-clip-text text-transparent ${
                 theme === "dark"
                   ? "from-[#3be6f6] to-[#093adc]"
                   : "from-[#fc894a] to-[#8548ff]"
@@ -198,7 +198,7 @@ export default function AboutSection() {
           </Item>
           <Item>
             <p
-              className={`mt-2 text-lg inter-regular ${
+              className={`mt-2 text-base tracking-tight inter-regular ${
                 theme === "dark" ? "text-gray-300/90" : "text-gray-700"
               }`}>
               {DATA.about.description}

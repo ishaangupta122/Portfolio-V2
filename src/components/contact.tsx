@@ -6,7 +6,7 @@ import { ScrollAnimation } from "./scroll-animation";
 export default function Contact() {
   const { theme } = useTheme();
   return (
-    <section className="flex flex-col items-center justify-center py-12 px-4 text-center max-w-2xl mx-auto dark:text-[#d8dee6] text-black">
+    <section className="flex flex-col items-center justify-center pb-14 md:pb-0 pt-14 px-4 text-center max-w-2xl mx-auto dark:text-[#d8dee6] text-black">
       <ScrollAnimation>
         <h2 className="text-4xl inter-semibold mb-5 dark:text-white">
           Get in Touch
@@ -14,7 +14,7 @@ export default function Contact() {
       </ScrollAnimation>
       <ScrollAnimation>
         <div
-          className={`md:text-lg mb-4 ${
+          className={`md:text-lg ${
             theme === "dark" ? "text-gray-200" : "text-gray-700"
           }`}>
           Want to chat ? DM me on{" "}

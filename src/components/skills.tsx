@@ -19,9 +19,9 @@ export default function Skills() {
               <div
                 className={`${
                   theme === "dark"
-                    ? "bg-slate-800 border-slate-700 text-[#d8dee6] shadow-none"
-                    : "bg-gray-50 border-gray-300 text-black"
-                } px-2 py-1 rounded-sm text-sm border bg-gradient-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-medium`}>
+                    ? "bg-slate-800/50 border-gray-300/10 text-[#d8dee6] shadow-none"
+                    : "bg-slate-400/5 border-gray-600/20 text-gray-900"
+                } px-2.5 py-0.5 rounded-sm text-[.8rem] border bg-gradient-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-medium`}>
                 <span>{skill.name}</span>
               </div>
             </FadeBlurStaggerItem>
