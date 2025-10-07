@@ -14,28 +14,28 @@ export default function Contact() {
       </ScrollAnimation>
       <ScrollAnimation>
         <div
-          className={`md:text-lg ${
-            theme === "dark" ? "text-gray-200" : "text-gray-700"
+          className={`text-[.9rem] md:text-base inter-regular tracking-tight ${
+            theme === "dark" ? "text-gray-300" : "text-gray-700"
           }`}>
           Want to chat ? DM me on{" "}
           <Link
             to={DATA.contact.linkedin}
             target="_blank"
-            className="font-medium text-blue-500 hover:underline">
+            className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
             LinkedIn
           </Link>{" "}
           /{" "}
           <Link
             to={DATA.contact.twitter}
             target="_blank"
-            className="font-medium text-blue-500 hover:underline">
+            className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
             X
           </Link>
           , or just send an email at{" "}
           <Link
             to={`mailto:${DATA.contact.mail}`}
             target="_blank"
-            className="font-medium text-blue-500 hover:underline">
+            className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
             {DATA.contact.mail}
           </Link>
           .

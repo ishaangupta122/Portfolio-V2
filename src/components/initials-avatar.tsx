@@ -15,7 +15,7 @@ const InitialsAvatar: React.FC<InitialsAvatarProps> = ({ name, style }) => {
 
   return (
     <div
-      className={`text-sm flex items-center justify-center rounded-full dark:bg-[#e8eaed] dark:text-black bg-black text-[#d8dee6]  font-bold uppercase tracking-wide ${style}`}>
+      className={`text-base flex items-center justify-center rounded-full dark:bg-[#e8eaed] dark:text-black bg-black text-[#d8dee6] inter-semibold uppercase tracking-wide ${style}`}>
       {initials}
     </div>
   );

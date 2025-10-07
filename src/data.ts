@@ -6,7 +6,7 @@ export const DATA: Data = {
   about: {
     image: "ishaan_img_2.jpg",
     name: "Ishaan Gupta",
-    title: "Frontend Developer",
+    title: "Web Developer",
     description: "I'm Passionate about building modern web applications.",
     resume:
       "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",

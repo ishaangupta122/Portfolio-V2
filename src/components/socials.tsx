@@ -16,8 +16,8 @@ function MobileBar({ theme }: { theme: string }) {
     <TooltipProvider>
       <div className="md:hidden fixed inset-x-4 bottom-5 z-50 pointer-events-auto">
         <div
-          className="mx-auto w-fit flex gap-3 items-center bg-white/20 dark:bg-black/30
-                        backdrop-blur-lg backdrop-saturate-200
+          className="mx-auto w-fit flex gap-3 items-center bg-white/30 dark:bg-black/30
+                        border border-black/10 dark:border-white/5 backdrop-blur-lg backdrop-saturate-200
                         rounded-xl px-3 py-2 shadow-lg
                         max-w-[calc(100%-1rem)]">
           {DATA.socials.map((social: any, index: number) => (

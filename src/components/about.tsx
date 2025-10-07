@@ -169,7 +169,7 @@ export default function AboutSection() {
           <img
             src={DATA.about.image}
             alt={DATA.about.name}
-            className="w-35 h-35 md:w-45 md:h-45 object-cover rounded-full cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.03]"
+            className="w-35 h-35 md:w-50 md:h-50 object-cover rounded-full cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.03]"
             style={{ borderRadius: "9999px" }}
             onClick={() => setIsProfileOpen(true)}
           />
@@ -179,26 +179,30 @@ export default function AboutSection() {
         <div className="mt-1 flex flex-col gap-1">
           <Item>
             <div
-              className={`flex flex-col text-5xl inter-medium tracking-tight ${
-                theme === "dark" ? "text-[#E2E8F0]" : "text-black"
+              className={`flex flex-col text-4xl md:text-8xl inter-semibold ${
+                theme === "dark" ? "text-[#e0e4e8]" : ""
               }`}>
-              <span className="text-[2.6rem]">Hey, I'm </span>
-              <span className="text-[2.6rem]">{DATA.about.name}</span>
+              <span className="text-[2.3rem] md:text-[2.5rem]">Hi, I'm </span>
+              <span className="text-[2.3rem] md:text-[2.6rem]">
+                {DATA.about.name}
+              </span>
             </div>
           </Item>
           <Item>
             <div
-              className={`text-4xl inter-semibold tracking-tight bg-gradient-to-r bg-clip-text text-transparent ${
+              className={`-mt-2 inter-semibold bg-gradient-to-r bg-clip-text text-transparent ${
                 theme === "dark"
                   ? "from-[#3be6f6] to-[#093adc]"
-                  : "from-[#fc894a] to-[#8548ff]"
+                  : "from-[#ff7124] to-[#6e26ff]"
               }`}>
-              <TypewriterEffect text={DATA.about.title} speed={50} />
+              <span className="text-[1.8rem] md:text-[2.2rem]">
+                <TypewriterEffect text={DATA.about.title} speed={50} />
+              </span>
             </div>
           </Item>
           <Item>
             <p
-              className={`mt-2 text-base tracking-tight inter-regular ${
+              className={`mt-2 text-[0.96rem] tracking-tight inter-regular ${
                 theme === "dark" ? "text-gray-300/90" : "text-gray-700"
               }`}>
               {DATA.about.description}

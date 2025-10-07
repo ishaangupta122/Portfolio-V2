@@ -46,7 +46,7 @@ const InteractionGradient = () => {
       return `
         radial-gradient(
           circle at ${x * 100}% ${y * 100}%,
-          rgba(255, 200, 180, 0.5) -30%,
+          rgba(255, 210, 180, 0.5) -30%,
           #F4F0F0 30%
         )
       `;
@@ -54,7 +54,7 @@ const InteractionGradient = () => {
       return `
         radial-gradient(
           circle at ${x * 100}% ${y * 100}%,
-          rgba(0, 128, 255, 0.3) -40%,
+          rgba(0, 128, 255, 0.3) -80%,
           rgba(0, 128, 255, 0) 70%
         )
       `;

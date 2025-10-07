@@ -13,7 +13,7 @@ export default function Skills() {
       </ScrollAnimation>
 
       <ScrollAnimation>
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-1.5">
           {DATA.skills.map((skill: any, i: any) => (
             <FadeBlurStaggerItem key={skill.id} index={i}>
               <div
@@ -21,7 +21,7 @@ export default function Skills() {
                   theme === "dark"
                     ? "bg-slate-800/50 border-gray-300/10 text-[#d8dee6] shadow-none"
                     : "bg-slate-400/5 border-gray-600/20 text-gray-900"
-                } px-2.5 py-0.5 rounded-sm text-[.8rem] border bg-gradient-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-medium`}>
+                } px-2.5 py-0.5 rounded-sm text-[0.84rem] border bg-gradient-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-medium`}>
                 <span>{skill.name}</span>
               </div>
             </FadeBlurStaggerItem>

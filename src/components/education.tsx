@@ -34,22 +34,22 @@ export default function Education() {
                 )}
               </div>
               <div className="flex flex-col w-full p-0">
-                <div className="flex flex-col md:flex-row md:justify-between justify-start md:items-center gap-1">
+                <div className="flex flex-row justify-between items-start md:items-center gap-1">
                   <h3
-                    className={`inter-semibold text-base transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
+                    className={`inter-medium text-[0.92rem] transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
                       theme === "dark" ? "text-[#d8dee6]" : "text-dark-500"
                     }`}>
                     {edu.institution}
                   </h3>
                   <span
-                    className={`text-xs  ${
+                    className={`min-w-fit text-xs uppercase inter-medium tracking-tight ${
                       theme === "dark" ? "text-gray-300/80" : "text-gray-700"
-                    } uppercase inter-semibold`}>
+                    } `}>
                     {edu.period}
                   </span>
                 </div>
                 <p
-                  className={`text-sm inter-medium flex items-center justify-start gap-1 md:mt-0 mt-1 transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
+                  className={`inter-medium text-[0.8rem] flex items-center justify-start gap-1 md:mt-0 mt-1 transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
                     theme === "dark" ? "text-[#d8dee6]" : "text-black"
                   }`}>
                   <Minus /> {edu.degree}
