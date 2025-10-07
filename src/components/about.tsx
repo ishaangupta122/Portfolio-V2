@@ -181,30 +181,30 @@ export default function AboutSection() {
         <div className="mt-1 flex flex-col gap-1">
           <Item>
             <div
-              className={`flex flex-col text-4xl md:text-8xl inter-semibold ${
+              className={`flex flex-col text-4xl md:text-5xl inter-semibold  ${
                 theme === "dark" ? "text-[#eef0f3]" : ""
               }`}>
-              <span className="text-[2.3rem] md:text-[2.5rem]">Hi, I'm </span>
-              <span className="text-[2.3rem] md:text-[2.6rem]">
+              <span className="text-[2.3rem] md:text-[2.5rem]">Hey, I'm </span>
+              <span className="text-[2.3rem] md:text-[2.5rem]">
                 {DATA.about.name}
               </span>
             </div>
           </Item>
           <Item>
             <div
-              className={`-mt-2 inter-semibold bg-gradient-to-r bg-clip-text text-transparent ${
+              className={`inter-bold bg-gradient-to-r bg-clip-text text-transparent ${
                 theme === "dark"
                   ? "from-[#3be6f6] to-[#093adc]"
                   : "from-[#ff7124] to-[#6e26ff]"
               }`}>
-              <span className="text-[1.8rem] md:text-[2.2rem]">
+              <span className="text-[1.8rem] md:text-[2.1rem]">
                 <TypewriterEffect text={DATA.about.title} speed={50} />
               </span>
             </div>
           </Item>
           <Item>
             <p
-              className={`mt-2 text-[0.96rem] tracking-tight inter-regular ${
+              className={`text-[0.96rem] tracking-tight inter-medium ${
                 theme === "dark" ? "text-gray-300/90" : "text-gray-700"
               }`}>
               {DATA.about.description}

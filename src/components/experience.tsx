@@ -88,7 +88,7 @@ export default function Experience() {
                 <div className="flex-1 pb-4">
                   <div className="flex flex-row justify-between items-center gap-1">
                     <span
-                      className={`text-[0.92rem] inter-medium ${
+                      className={`text-[0.92rem] inter-semibold ${
                         theme === "dark" ? "text-[#d8dee6]" : "text-black"
                       }`}>
                       {exp.company}

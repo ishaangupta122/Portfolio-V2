@@ -36,7 +36,7 @@ export default function Education() {
               <div className="flex flex-col w-full p-0">
                 <div className="flex flex-row justify-between items-start md:items-center gap-1">
                   <h3
-                    className={`inter-medium text-[0.92rem] transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
+                    className={`inter-semibold text-[0.92rem] transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
                       theme === "dark" ? "text-[#d8dee6]" : "text-dark-500"
                     }`}>
                     {edu.institution}

@@ -7,7 +7,8 @@ export const DATA: Data = {
     image: "ishaan_img_2.jpg",
     name: "Ishaan Gupta",
     title: "Web Developer",
-    description: "I'm Passionate about building modern web applications.",
+    description:
+      "I'm passionate about building modern web applications using MERN Stack.",
     resume:
       "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",
     mail: "ishaang2209@gmail.com",

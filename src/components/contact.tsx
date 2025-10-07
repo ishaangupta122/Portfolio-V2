@@ -14,7 +14,7 @@ export default function Contact() {
       </ScrollAnimation>
       <ScrollAnimation>
         <div
-          className={`text-[.9rem] md:text-base inter-regular tracking-tight ${
+          className={`text-[0.95rem] md:text-base inter-medium tracking-tight ${
             theme === "dark" ? "text-gray-300" : "text-gray-700"
           }`}>
           Want to chat ? DM me on{" "}
