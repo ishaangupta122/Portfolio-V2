@@ -5,6 +5,7 @@ import SocialBar from "./socials";
 import { DATA } from "@/data";
 import { Stagger } from "./stagger-effect";
 import { ScrollAnimation } from "./scroll-animation";
+import { LottieAnimation } from "./lottie-animation";
 
 export default function AboutSection() {
   const { theme } = useTheme();
@@ -166,13 +167,14 @@ export default function AboutSection() {
       <Container className="h-full w-full lg:w-[35%] lg:max-w-xl flex flex-col gap-4 px-6 lg:py-14 pt-14 lg:fixed">
         {/* Image with interactive hover */}
         <div className="w-full">
-          <img
+          {/* <img
             src={DATA.about.image}
             alt={DATA.about.name}
             className="w-35 h-35 md:w-50 md:h-50 object-cover rounded-full cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.03]"
             style={{ borderRadius: "9999px" }}
             onClick={() => setIsProfileOpen(true)}
-          />
+          /> */}
+          <LottieAnimation />
         </div>
 
         {/* Text */}
@@ -180,7 +182,7 @@ export default function AboutSection() {
           <Item>
             <div
               className={`flex flex-col text-4xl md:text-8xl inter-semibold ${
-                theme === "dark" ? "text-[#e0e4e8]" : ""
+                theme === "dark" ? "text-[#eef0f3]" : ""
               }`}>
               <span className="text-[2.3rem] md:text-[2.5rem]">Hi, I'm </span>
               <span className="text-[2.3rem] md:text-[2.6rem]">
