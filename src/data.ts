@@ -1,10 +1,10 @@
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import type { Data } from "./types";
 
 export const DATA: Data = {
   about: {
-    image: "ishaan_img_2.jpg",
+    image: "ishaan_img.jpg",
     name: "Ishaan Gupta",
     title: "Web Developer",
     description:
@@ -79,20 +79,19 @@ export const DATA: Data = {
     { id: 4, name: "Bootstrap", image: "bootstrap.svg" },
     { id: 5, name: "JavaScript", image: "javascript.svg" },
     { id: 6, name: "TypeScript", image: "typescript.png" },
-    { id: 7, name: "Python", image: "python.svg" },
+    // { id: 7, name: "Python", image: "python.svg" },
     { id: 8, name: "C++", image: "c++.svg" },
     { id: 9, name: "React.js", image: "react.svg" },
-    { id: 10, name: "Next.js", image: "nextjs.svg" },
+    { id: 10, name: "Next.js", image: "nextjs.png" },
     { id: 11, name: "Node.js", image: "nodejs.png" },
     { id: 12, name: "MongoDB", image: "mongodb.svg" },
-    { id: 13, name: "PostreSQL", image: "postresql.jpeg" },
+    // { id: 13, name: "PostreSQL", image: "postresql.svg" },
     { id: 14, name: "MySQL", image: "mysql.svg" },
     { id: 15, name: "Git", image: "git.svg" },
     { id: 16, name: "AWS", image: "aws.svg" },
-    { id: 17, name: "DigitalOcean", image: "digitalocean.svg" },
+    // { id: 17, name: "DigitalOcean", image: "digitalocean.svg" },
     { id: 18, name: "Linux", image: "linux.png" },
-
-    { id: 18, name: "Figma", image: "figma.svg" },
+    { id: 19, name: "Figma", image: "figma.svg" },
   ],
 
   projects: [
@@ -206,11 +205,11 @@ export const DATA: Data = {
   },
 
   socials: [
-    // {
-    //   icon: FaRegFileAlt,
-    //   label: "Resume",
-    //   url: "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",
-    // },
+    {
+      icon: FaRegFileAlt,
+      label: "Resume",
+      url: "https://drive.google.com/file/d/1JGCOPowZn3_dLo0WQAPzxGWtZdAV0TYd/view?usp=drive_link",
+    },
     {
       icon: FaEnvelope,
       label: "Mail",
