@@ -35,6 +35,7 @@ export interface Education {
 export interface Skill {
   id: number;
   name: string;
+  image: string;
 }
 
 export interface Project {

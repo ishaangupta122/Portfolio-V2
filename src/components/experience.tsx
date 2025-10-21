@@ -45,13 +45,12 @@ export default function Experience() {
         });
       }
     });
-    // eslint-disable-next-line
   }, [openIndices]);
 
   return (
     <div className="max-w-2xl mx-auto">
       <ScrollAnimation>
-        <h2 className={`text-2xl inter-bold mb-4`}>Experience</h2>
+        <h2 className={`text-2xl inter-semibold mb-4`}>Experience</h2>
       </ScrollAnimation>
       <Accordion
         type="multiple"
@@ -88,8 +87,8 @@ export default function Experience() {
                 <div className="flex-1 pb-4">
                   <div className="flex flex-row justify-between items-center gap-1">
                     <span
-                      className={`text-[0.92rem] inter-semibold ${
-                        theme === "dark" ? "text-[#d8dee6]" : "text-black"
+                      className={`text-sm inter-medium ${
+                        theme === "dark" ? "text-[#e4e8ec]" : "text-black"
                       }`}>
                       {exp.company}
                     </span>
@@ -106,7 +105,7 @@ export default function Experience() {
                         ? "[&>svg]:text-white"
                         : "[&>svg]:text-black"
                     }`}>
-                    <div className="inter-medium text-[0.8rem] flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1 dark:text-[#d8dee6]">
+                    <div className="inter-regular text-[0.8rem] flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1 dark:text-[#e4e8ec]">
                       <Minus /> {exp.role}
                       <FaCheckCircle className="ml-1 w-3 h-3 text-green-500" />
                     </div>

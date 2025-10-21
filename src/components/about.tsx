@@ -184,8 +184,8 @@ export default function AboutSection() {
               className={`flex flex-col text-4xl md:text-5xl inter-semibold  ${
                 theme === "dark" ? "text-[#eef0f3]" : ""
               }`}>
-              <span className="text-[2.3rem] md:text-[2.5rem]">Hey, I'm </span>
-              <span className="text-[2.3rem] md:text-[2.5rem]">
+              <span className="text-[2rem] md:text-[2.3rem]">Hey, I'm </span>
+              <span className="text-[2rem] md:text-[2.3rem]">
                 {DATA.about.name}
               </span>
             </div>
@@ -197,14 +197,14 @@ export default function AboutSection() {
                   ? "from-[#3be6f6] to-[#093adc]"
                   : "from-[#ff7124] to-[#6e26ff]"
               }`}>
-              <span className="text-[1.8rem] md:text-[2.1rem]">
+              <span className="text-[1.5rem] md:text-[1.8rem]">
                 <TypewriterEffect text={DATA.about.title} speed={50} />
               </span>
             </div>
           </Item>
           <Item>
             <p
-              className={`text-[0.96rem] tracking-tight inter-medium ${
+              className={`text-sm tracking-tight inter-medium ${
                 theme === "dark" ? "text-gray-300/90" : "text-gray-700"
               }`}>
               {DATA.about.description}

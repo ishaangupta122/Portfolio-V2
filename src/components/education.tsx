@@ -10,7 +10,7 @@ export default function Education() {
   return (
     <section className="max-w-2xl mx-auto">
       <ScrollAnimation>
-        <h2 className={`text-2xl inter-bold mb-2`}>Education</h2>
+        <h2 className={`text-2xl inter-semibold mb-2`}>Education</h2>
       </ScrollAnimation>
       <div className="space-y-2">
         {DATA.educations.map((edu: any) => (
@@ -36,8 +36,8 @@ export default function Education() {
               <div className="flex flex-col w-full p-0">
                 <div className="flex flex-row justify-between items-start md:items-center gap-1">
                   <h3
-                    className={`inter-semibold text-[0.92rem] transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
-                      theme === "dark" ? "text-[#d8dee6]" : "text-dark-500"
+                    className={`inter-medium text-sm transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
+                      theme === "dark" ? "text-[#e4e8ec]" : "text-dark-500"
                     }`}>
                     {edu.institution}
                   </h3>
@@ -49,8 +49,8 @@ export default function Education() {
                   </span>
                 </div>
                 <p
-                  className={`inter-medium text-[0.8rem] flex items-center justify-start gap-1 md:mt-0 mt-1 transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
-                    theme === "dark" ? "text-[#d8dee6]" : "text-black"
+                  className={`inter-regular text-[0.8rem] flex items-center justify-start gap-1 md:mt-0 mt-1 transition-transform duration-300 ease-in-out group-hover:translate-x-1 ${
+                    theme === "dark" ? "text-[#e4e8ec]" : "text-black"
                   }`}>
                   <Minus /> {edu.degree}
                 </p>

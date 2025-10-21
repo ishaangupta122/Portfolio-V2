@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section className="max-w-2xl mx-auto">
       <ScrollAnimation>
-        <h2 className={`text-2xl inter-bold mb-3`}>Projects</h2>
+        <h2 className={`text-2xl inter-semibold mb-3`}>Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {DATA.projects.map((project: any) => (
             <ProjectCard key={project.id} project={project} />
@@ -47,20 +47,20 @@ export function ProjectCard({ project }: { project: any }) {
       } flex flex-col border shadow-md shadow-black/10 rounded-lg`}>
       {/* Media */}
       <div
-        className={`relative w-full rounded-t-lg px-5 pt-5 ${
+        className={`relative w-full rounded-t-md px-4 pt-4 ${
           theme === "dark"
             ? "bg-gradient-to-r from-[#82DFE4] to-[#3873BF]"
             : "bg-gradient-to-r from-[#EDA47D] to-[#A079EC]"
         }`}
-        style={{ height: "220px" }}>
-        <div className="relative h-full w-full overflow-hidden rounded-t-lg flex items-center justify-center">
+        style={{ height: "180px" }}>
+        <div className="relative h-full w-full overflow-hidden flex items-center justify-center">
           {media.type === "image" ? (
             <>
               <img
                 key={media.src}
                 src={media.src}
                 alt={project.title}
-                className="w-full h-full object-fill rounded-t-lg transition-opacity duration-700 bg-black/60"
+                className="w-full h-full object-fill rounded-t-md transition-opacity duration-700 bg-black/60"
                 style={{ maxHeight: "220px", maxWidth: "100%" }}
               />
               <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
@@ -75,7 +75,7 @@ export function ProjectCard({ project }: { project: any }) {
                 autoPlay
                 loop
                 muted
-                className="w-full h-full object-fill rounded-t-lg transition-opacity duration-700 bg-black/60"
+                className="w-full h-full object-fill rounded-t-md transition-opacity duration-700 bg-black/60"
                 style={{ maxHeight: "220px", maxWidth: "100%" }}
               />
               <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
@@ -119,7 +119,7 @@ export function ProjectCard({ project }: { project: any }) {
 
       {/* Content */}
       <div className="px-3 pb-3 m-0 flex flex-col flex-grow">
-        <h3 className="text-base inter-semibold my-1">{project.title}</h3>
+        <h3 className="text-base inter-medium my-1">{project.title}</h3>
         <p
           className={`${
             theme === "dark" ? "text-gray-300" : "text-dark-600"
@@ -127,7 +127,7 @@ export function ProjectCard({ project }: { project: any }) {
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-1 mb-4">
+        <div className="flex flex-wrap items-start justify-start gap-1 pb-4 mt-auto mb-auto">
           {project.techStack.map((tech: string, i: number) => (
             <span
               key={i}
@@ -135,7 +135,7 @@ export function ProjectCard({ project }: { project: any }) {
                 theme === "dark"
                   ? "bg-slate-800/70 border-gray-300/10 text-gray-200"
                   : "bg-slate-400/10 border-gray-600/20 text-gray-900"
-              } px-2 py-1 rounded-sm text-xs border inter-regular`}>
+              } px-2 py-0.5 rounded-sm text-xs border inter-regular`}>
               {tech}
             </span>
           ))}
@@ -146,7 +146,7 @@ export function ProjectCard({ project }: { project: any }) {
             <Link
               className={`${
                 theme === "dark" ? "bg-white text-black" : "bg-black text-white"
-              } flex items-center justify-center gap-1 rounded-md cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
+              } flex items-center justify-center gap-1 rounded-sm cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
               to={project.websiteUrl}
               target="_blank">
               <FaGlobe size={14} />
@@ -157,7 +157,7 @@ export function ProjectCard({ project }: { project: any }) {
             <Link
               className={`${
                 theme === "dark" ? "bg-white text-black" : "bg-black text-white"
-              } flex items-center justify-center gap-1 rounded-md cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
+              } flex items-center justify-center gap-1 rounded-sm cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
               to={project.sourceUrl}
               target="_blank">
               <FaGithub size={14} />
