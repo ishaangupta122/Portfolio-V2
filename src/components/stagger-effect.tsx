@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, easeOut, type Variants } from "framer-motion";
 import type {
   FadeBlurStaggerItemProps,

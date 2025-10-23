@@ -4,7 +4,7 @@ import type { Data } from "./types";
 
 export const DATA: Data = {
   about: {
-    image: "ishaan_img.jpg",
+    image: "/ishaan_img.jpg",
     name: "Ishaan Gupta",
     title: "Web Developer",
     description:
@@ -48,7 +48,7 @@ export const DATA: Data = {
   educations: [
     {
       id: 1,
-      logo: "tiet_logo.png",
+      logo: "/tiet_logo.png",
       institution: "Thapar Institute of Engineering and Technology",
       degree: "B.Tech. in Computer Engineering",
       period: "2025 – 2028",
@@ -73,25 +73,25 @@ export const DATA: Data = {
   ],
 
   skills: [
-    { id: 1, name: "HTML", image: "html.svg" },
-    { id: 2, name: "CSS", image: "css.svg" },
-    { id: 3, name: "Tailwind CSS", image: "tailwind.svg" },
-    { id: 4, name: "Bootstrap", image: "bootstrap.svg" },
-    { id: 5, name: "JavaScript", image: "javascript.svg" },
-    { id: 6, name: "TypeScript", image: "typescript.png" },
-    // { id: 7, name: "Python", image: "python.svg" },
-    { id: 8, name: "C++", image: "c++.svg" },
-    { id: 9, name: "React.js", image: "react.svg" },
-    { id: 10, name: "Next.js", image: "nextjs.png" },
-    { id: 11, name: "Node.js", image: "nodejs.png" },
-    { id: 12, name: "MongoDB", image: "mongodb.svg" },
-    // { id: 13, name: "PostreSQL", image: "postresql.svg" },
-    { id: 14, name: "MySQL", image: "mysql.svg" },
-    { id: 15, name: "Git", image: "git.svg" },
-    { id: 16, name: "AWS", image: "aws.svg" },
-    // { id: 17, name: "DigitalOcean", image: "digitalocean.svg" },
-    { id: 18, name: "Linux", image: "linux.png" },
-    { id: 19, name: "Figma", image: "figma.svg" },
+    { id: 1, name: "HTML", image: "/html.svg" },
+    { id: 2, name: "CSS", image: "/css.svg" },
+    { id: 3, name: "Tailwind CSS", image: "/tailwind.svg" },
+    { id: 4, name: "Bootstrap", image: "/bootstrap.svg" },
+    { id: 5, name: "JavaScript", image: "/javascript.svg" },
+    { id: 6, name: "TypeScript", image: "/typescript.png" },
+    // { id: 7, name: "Python", image: "/python.svg" },
+    { id: 8, name: "C++", image: "/c++.svg" },
+    { id: 9, name: "React.js", image: "/react.svg" },
+    { id: 10, name: "Next.js", image: "/nextjs.png" },
+    { id: 11, name: "Node.js", image: "/nodejs.png" },
+    { id: 12, name: "MongoDB", image: "/mongodb.svg" },
+    // { id: 13, name: "PostreSQL", image: "/postresql.svg" },
+    { id: 14, name: "MySQL", image: "/mysql.svg" },
+    { id: 15, name: "Git", image: "/git.svg" },
+    { id: 16, name: "AWS", image: "/aws.svg" },
+    // { id: 17, name: "DigitalOcean", image: "/digitalocean.svg" },
+    { id: 18, name: "Linux", image: "/linux.png" },
+    { id: 19, name: "Figma", image: "/figma.svg" },
   ],
 
   projects: [
@@ -100,7 +100,7 @@ export const DATA: Data = {
       title: "Thapar Polytechnic College",
       description:
         "Developed a comprehensive web portal for Thapar Polytechnic College using React and Node.js. Features include dynamic data fetching, responsive design, and an modern UI.",
-      images: ["tpc_img.png", "tpc_admin_img.png"],
+      images: ["/tpc_img.png", "/tpc_admin_img.png"],
       videos: [],
       techStack: [
         "React",
@@ -118,8 +118,8 @@ export const DATA: Data = {
       title: "Grocery Store Frontend",
       description:
         "Built an intuitive and responsive grocery store frontend with React and TailwindCSS. Includes dynamic product listings and a shopping cart",
-      images: ["grocery_img.png"],
-      videos: ["grocery_store_video.mp4"],
+      images: ["/grocery_img.png"],
+      videos: ["/grocery_store_video.mp4"],
       techStack: ["React", "Node.js", "TailwindCSS"],
       websiteUrl: "https://grocery-store-wheat.vercel.app/",
       sourceUrl: "https://github.com/ishaangupta122/GroceryStore.git",
@@ -129,7 +129,7 @@ export const DATA: Data = {
       title: "Course Selling Platform",
       description:
         "Engineered a full-stack platform for selling courses online using React, Node.js, and Razorpay for payments. Instructors can manage content while students securely purchase and access materials.",
-      images: ["courses_img.png"],
+      images: ["/courses_img.png"],
       videos: [],
       techStack: [
         "React",
@@ -148,7 +148,7 @@ export const DATA: Data = {
       title: "TPC Admin Dashboard",
       description:
         "Designed an admin dashboard for TPC website owners using React, TypeScript, and PrimeReact. Management of faculty, events, success stories, and more can be done with this dashboard.",
-      images: ["tpc_admin_img.png"],
+      images: ["/tpc_admin_img.png"],
       videos: [],
       techStack: [
         "React",
@@ -167,7 +167,7 @@ export const DATA: Data = {
       title: "Pixera (Multimedia Hub)",
       description:
         "Created Pixera, a multimedia hub leveraging the Pexels API for stunning image searches. Built with React and TailwindCSS, it offers fast search queries and a sleek, responsive gallery interface.",
-      images: ["pixera_img.png"],
+      images: ["/pixera_img.png"],
       videos: [],
       techStack: [
         "React",
@@ -184,7 +184,7 @@ export const DATA: Data = {
       title: "News App",
       description:
         "Developed a modern News App that fetches real-time news articles using the News API. Features keyword search and category filtering, built with React and styled efficiently with TailwindCSS.",
-      images: ["news_img.png"],
+      images: ["/news_img.png"],
       videos: [],
       techStack: [
         "React",

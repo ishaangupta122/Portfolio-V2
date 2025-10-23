@@ -1,11 +1,11 @@
 # 🌟 My Portfolio Website
 
-This is my personal portfolio website built with **React + Vite + TS**, **Framer Motion**, and **Shadcn**.  
+This is my personal portfolio website built with **NextJS + TS**, **Framer Motion**, and **Shadcn**.  
 It highlights my projects, skills, and experience with a clean design and smooth animations.
 
 ## 🚀 Tech Stack
 
-- **React + Vite + TS** — Frontend framework
+- **NextJS + TS** — Frontend framework
 - **Framer Motion** — For animations and transitions
 - **Shadcn** — For modern, accessible UI components
 

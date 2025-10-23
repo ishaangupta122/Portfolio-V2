@@ -1,11 +1,16 @@
+"use client";
+
 import { useTheme } from "@/context/theme-provider";
 import { useEffect, useState } from "react";
 
 export const FixedGradient = () => {
   const { theme } = useTheme();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Set initial value on mount
+    setIsMobile(window.innerWidth <= 600);
+
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
     };

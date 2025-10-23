@@ -1,7 +1,10 @@
+"use client";
+
 import { FaGlobe, FaGithub, FaRegImage, FaPlayCircle } from "react-icons/fa";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
 import { DATA } from "@/data";
 import { useTheme } from "@/context/theme-provider";
 import { ScrollAnimation } from "./scroll-animation";
@@ -24,6 +27,10 @@ export default function Projects() {
 export function ProjectCard({ project }: { project: any }) {
   const { theme } = useTheme();
   const [current, setCurrent] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   // Combine videos first, then images
   const mediaList = [
     ...(project.videos || []).map((src: string) => ({ type: "video", src })),
@@ -31,6 +38,42 @@ export function ProjectCard({ project }: { project: any }) {
   ];
   const totalMedia = mediaList.length;
   const hasNavigation = totalMedia > 1;
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        rootMargin: "50px",
+        threshold: 0.1,
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  // Pause video when not in view or not current
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isInView && mediaList[current].type === "video") {
+        videoRef.current.play().catch(() => {
+          // Handle autoplay restriction
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isInView, current, mediaList]);
 
   const next = () => setCurrent((prev: number) => (prev + 1) % totalMedia);
   const prev = () =>
@@ -40,6 +83,7 @@ export function ProjectCard({ project }: { project: any }) {
 
   return (
     <div
+      ref={cardRef}
       className={`${
         theme === "dark"
           ? "bg-black/20 text-white border-white/10"
@@ -47,7 +91,7 @@ export function ProjectCard({ project }: { project: any }) {
       } flex flex-col border shadow-md shadow-black/10 rounded-lg`}>
       {/* Media */}
       <div
-        className={`relative min-h-[200px] h-auto w-full rounded-t-md px-4 pt-4 ${
+        className={`relative h-[200px] w-full rounded-t-md px-4 pt-4 ${
           theme === "dark"
             ? "bg-gradient-to-r from-[#82DFE4] to-[#3873BF]"
             : "bg-gradient-to-r from-[#EDA47D] to-[#A079EC]"
@@ -55,11 +99,18 @@ export function ProjectCard({ project }: { project: any }) {
         <div className="relative h-full w-full flex items-center justify-center">
           {media.type === "image" ? (
             <>
-              <img
+              <Image
                 key={media.src}
                 src={media.src}
                 alt={project.title}
-                className="w-full h-full object-fill rounded-t-md transition-opacity duration-700 bg-black/60"
+                width={500}
+                height={300}
+                loading="lazy"
+                quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-full object-cover object-top rounded-t-md transition-opacity duration-700 bg-black/60"
               />
               <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
                 <FaRegImage size={16} />
@@ -67,14 +118,23 @@ export function ProjectCard({ project }: { project: any }) {
             </>
           ) : (
             <>
-              <video
-                key={media.src}
-                src={media.src}
-                autoPlay
-                loop
-                muted
-                className="w-full h-full object-fill rounded-t-md transition-opacity duration-700 bg-black/60"
-              />
+              {isInView ? (
+                <video
+                  ref={videoRef}
+                  key={media.src}
+                  src={media.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-cover object-top rounded-t-md transition-opacity duration-700 bg-black/60"
+                />
+              ) : (
+                <div className="w-full h-full bg-black/60 rounded-t-md flex items-center justify-center">
+                  <FaPlayCircle size={48} className="text-white/50" />
+                </div>
+              )}
               <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
                 <FaPlayCircle size={16} />
               </span>
@@ -86,11 +146,13 @@ export function ProjectCard({ project }: { project: any }) {
             <>
               <button
                 onClick={prev}
+                aria-label="Previous media"
                 className="absolute right-10 top-2 bg-black/40 hover:bg-black/70 text-white p-0.5 rounded-full transition-transform duration-300 hover:scale-110 cursor-pointer">
                 <HiChevronLeft size={20} />
               </button>
               <button
                 onClick={next}
+                aria-label="Next media"
                 className="absolute right-2 top-2 bg-black/40 hover:bg-black/70 text-white p-0.5 rounded-full transition-transform duration-300 hover:scale-110 cursor-pointer">
                 <HiChevronRight size={20} />
               </button>
@@ -100,12 +162,13 @@ export function ProjectCard({ project }: { project: any }) {
       </div>
 
       {/* Indicators */}
-      <div className="flex justify-center gap-1.5 mt-4 mb-1 min-h-[12px]">
+      <div className="flex justify-center gap-1.5 mt-4 mb-1 min-h-3">
         {hasNavigation &&
           Array.from({ length: totalMedia }).map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
+              aria-label={`Go to media ${idx + 1}`}
               className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
                 idx === current
                   ? "bg-black dark:bg-white scale-110"
@@ -144,8 +207,9 @@ export function ProjectCard({ project }: { project: any }) {
               className={`${
                 theme === "dark" ? "bg-white text-black" : "bg-black text-white"
               } flex items-center justify-center gap-1 rounded-sm cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
-              to={project.websiteUrl}
-              target="_blank">
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer">
               <FaGlobe size={14} />
               Website
             </Link>
@@ -155,8 +219,9 @@ export function ProjectCard({ project }: { project: any }) {
               className={`${
                 theme === "dark" ? "bg-white text-black" : "bg-black text-white"
               } flex items-center justify-center gap-1 rounded-sm cursor-pointer px-2 py-1 hover:scale-105 transition-all duration-200`}
-              to={project.sourceUrl}
-              target="_blank">
+              href={project.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer">
               <FaGithub size={14} />
               Source
             </Link>

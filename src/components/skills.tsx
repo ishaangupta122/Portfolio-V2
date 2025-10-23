@@ -1,5 +1,8 @@
+"use client";
+
 import { useTheme } from "@/context/theme-provider";
 import { DATA } from "@/data";
+import Image from "next/image";
 import { ScrollAnimation } from "./scroll-animation";
 import { FadeBlurStaggerItem } from "./stagger-effect";
 
@@ -21,10 +24,12 @@ export default function Skills() {
                   theme === "dark"
                     ? "bg-slate-800/70 border-gray-300/10 text-gray-200"
                     : "bg-slate-400/10 border-gray-600/20 text-gray-800"
-                } flex items-center justify-center gap-[0.3rem] flex-row px-2 py-0.5 rounded-sm text-[0.8rem] border bg-gradient-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-medium`}>
-                <img
+                } flex items-center justify-center gap-[0.3rem] flex-row px-2 py-0.5 rounded-sm text-[0.8rem] border bg-linear-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-medium`}>
+                <Image
                   src={skill.image}
                   alt={skill.name}
+                  width={14}
+                  height={14}
                   className="w-3.5 h-3.5 object-contain"
                 />
                 <span>{skill.name}</span>
