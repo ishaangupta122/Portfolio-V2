@@ -1,3 +1,5 @@
+"use client";
+
 import type { InitialsAvatarProps } from "@/types";
 
 const InitialsAvatar: React.FC<InitialsAvatarProps> = ({ name, style }) => {

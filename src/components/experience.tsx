@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionItem,
@@ -9,7 +11,8 @@ import { DATA } from "@/data";
 import { Minus } from "lucide-react";
 import { useState, useEffect } from "react";
 import { FaCheckCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { ScrollAnimation } from "./scroll-animation";
 import InitialsAvatar from "./initials-avatar";
 
@@ -70,11 +73,13 @@ export default function Experience() {
           <ScrollAnimation key={exp.id}>
             <AccordionItem value={`item-${exp.id}`} className="border-none">
               <div className="flex items-start gap-4 relative">
-                <Link to={exp.url} target="_blank">
+                <Link href={exp.url} target="_blank">
                   {exp.image !== "" ? (
-                    <img
+                    <Image
                       src={exp.image}
                       alt={exp.company}
+                      width={44}
+                      height={44}
                       className="w-11 h-11 rounded-full object-cover hover:scale-105 transition-all duration-200 shadow-md shadow-black/10"
                     />
                   ) : (

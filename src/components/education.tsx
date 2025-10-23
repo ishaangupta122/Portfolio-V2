@@ -1,7 +1,10 @@
+"use client";
+
 import { useTheme } from "@/context/theme-provider";
 import { DATA } from "@/data";
 import { Minus } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { ScrollAnimation } from "./scroll-animation";
 import InitialsAvatar from "./initials-avatar";
 
@@ -16,14 +19,16 @@ export default function Education() {
         {DATA.educations.map((edu: any) => (
           <ScrollAnimation key={edu.id}>
             <Link
-              to={edu.url}
+              href={edu.url}
               target="_blank"
               className="group bg-transparent border-none shadow-none flex flex-row justify-center items-start md:items-center gap-4 py-2">
               <div className="relative w-11 h-11">
                 {edu.logo !== "" ? (
-                  <img
+                  <Image
                     src={edu.logo}
                     alt={`${edu.institution} Logo`}
+                    width={44}
+                    height={44}
                     className="min-w-11 min-h-11 object-cover rounded-full transition-transform duration-200 ease-in-out group-hover:scale-105 shadow-md shadow-black/10"
                   />
                 ) : (

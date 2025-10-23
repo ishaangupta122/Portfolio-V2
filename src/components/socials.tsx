@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -6,7 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ModeToggle } from "./theme-toggle";
 import { useTheme } from "@/context/theme-provider";
 import { DATA } from "@/data";
@@ -20,7 +22,7 @@ function MobileBar({ theme }: { theme: string }) {
             <Tooltip key={index}>
               <TooltipTrigger asChild>
                 <Link
-                  to={social.url}
+                  href={social.url}
                   target="_blank"
                   className={`p-2 rounded-full hover:-translate-y-1 transition-all duration-200 ${
                     theme === "dark"
@@ -68,7 +70,7 @@ export default function SocialBar() {
             <Tooltip key={index}>
               <TooltipTrigger asChild>
                 <Link
-                  to={social.url}
+                  href={social.url}
                   target="_blank"
                   className={`p-2 rounded-md backdrop-blur-lg hover:-translate-y-1 transition-all duration-200 border ${
                     theme === "dark"

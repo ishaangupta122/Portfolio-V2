@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "@/context/theme-provider";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
