@@ -20,8 +20,8 @@ export default function Skills() {
                 className={`${
                   theme === "dark"
                     ? "bg-slate-800/70 border-gray-300/10 text-gray-200"
-                    : "bg-slate-400/10 border-gray-600/20 text-gray-700"
-                } flex items-center justify-center gap-[0.3rem] flex-row px-2.5 py-1 rounded-full text-xs border bg-gradient-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-semibold`}>
+                    : "bg-slate-400/10 border-gray-600/20 text-gray-800"
+                } flex items-center justify-center gap-[0.3rem] flex-row px-2 py-0.5 rounded-sm text-[0.8rem] border bg-gradient-to-br cursor-pointer hover:scale-105 transition-all duration-200 inter-medium`}>
                 <img
                   src={skill.image}
                   alt={skill.name}

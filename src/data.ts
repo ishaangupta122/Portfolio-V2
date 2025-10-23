@@ -56,7 +56,7 @@ export const DATA: Data = {
     },
     {
       id: 2,
-      logo: "tpc_logo.png",
+      logo: "",
       institution: "Thapar Polytechnic College",
       degree: "Diploma in CSE",
       period: "2022 – 2025",
@@ -64,7 +64,7 @@ export const DATA: Data = {
     },
     {
       id: 3,
-      logo: "gnf_logo.jpg",
+      logo: "",
       institution: "Guru Nanak Foundation Public School",
       degree: "Matriculation",
       period: "2012 - 2022",
@@ -221,14 +221,14 @@ export const DATA: Data = {
       url: "https://github.com/ishaangupta122",
     },
     {
-      icon: FaXTwitter,
-      label: "X",
-      url: "https://twitter.com/ishaangupta05",
-    },
-    {
       icon: FaLinkedin,
       label: "LinkedIn",
       url: "https://www.linkedin.com/in/ishaangupta05/",
+    },
+    {
+      icon: FaXTwitter,
+      label: "X",
+      url: "https://twitter.com/ishaangupta05",
     },
   ],
 };

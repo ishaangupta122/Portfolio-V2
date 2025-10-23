@@ -18,7 +18,7 @@ export function ModeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className={`p-2 rounded-md cursor-pointer hover:-translate-y-1 transition-all duration-200 md:border ${
+      className={`p-2 rounded-full md:rounded-md cursor-pointer hover:-translate-y-1 transition-all duration-200 md:border ${
         theme === "dark"
           ? "md:bg-slate-900/50 md:border-gray-300/10 bg-black/5 text-gray-200 hover:text-white"
           : "md:bg-slate-400/5 md:border-gray-600/10 bg-white/10 text-gray-700 hover:text-gray-800"

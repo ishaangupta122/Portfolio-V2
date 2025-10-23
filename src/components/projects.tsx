@@ -47,13 +47,12 @@ export function ProjectCard({ project }: { project: any }) {
       } flex flex-col border shadow-md shadow-black/10 rounded-lg`}>
       {/* Media */}
       <div
-        className={`relative w-full rounded-t-md px-4 pt-4 ${
+        className={`relative min-h-[200px] h-auto w-full rounded-t-md px-4 pt-4 ${
           theme === "dark"
             ? "bg-gradient-to-r from-[#82DFE4] to-[#3873BF]"
             : "bg-gradient-to-r from-[#EDA47D] to-[#A079EC]"
-        }`}
-        style={{ height: "180px" }}>
-        <div className="relative h-full w-full overflow-hidden flex items-center justify-center">
+        }`}>
+        <div className="relative h-full w-full flex items-center justify-center">
           {media.type === "image" ? (
             <>
               <img
@@ -61,7 +60,6 @@ export function ProjectCard({ project }: { project: any }) {
                 src={media.src}
                 alt={project.title}
                 className="w-full h-full object-fill rounded-t-md transition-opacity duration-700 bg-black/60"
-                style={{ maxHeight: "220px", maxWidth: "100%" }}
               />
               <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
                 <FaRegImage size={16} />
@@ -76,7 +74,6 @@ export function ProjectCard({ project }: { project: any }) {
                 loop
                 muted
                 className="w-full h-full object-fill rounded-t-md transition-opacity duration-700 bg-black/60"
-                style={{ maxHeight: "220px", maxWidth: "100%" }}
               />
               <span className="absolute top-2 left-2 bg-black/50 text-white p-1 rounded-full flex items-center justify-center">
                 <FaPlayCircle size={16} />

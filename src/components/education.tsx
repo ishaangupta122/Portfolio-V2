@@ -29,7 +29,7 @@ export default function Education() {
                 ) : (
                   <InitialsAvatar
                     name={edu.institution}
-                    style="w-11 h-11 transition-transform duration-200 ease-in-out group-hover:scale-105 shadow-md shadow-black/10"
+                    style="text-sm w-11 h-11 transition-transform duration-200 ease-in-out group-hover:scale-105 shadow-md shadow-black/10"
                   />
                 )}
               </div>

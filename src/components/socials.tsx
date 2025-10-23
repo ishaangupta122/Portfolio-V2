@@ -15,18 +15,14 @@ function MobileBar({ theme }: { theme: string }) {
   return (
     <TooltipProvider>
       <div className="md:hidden fixed inset-x-4 bottom-5 z-50 pointer-events-auto">
-        <div
-          className="mx-auto w-fit flex gap-3 items-center bg-white/30 dark:bg-black/30
-                        border border-black/10 dark:border-white/5 backdrop-blur-lg backdrop-saturate-200
-                        rounded-xl px-3 py-2 shadow-lg
-                        max-w-[calc(100%-1rem)]">
+        <div className="mx-auto w-fit flex gap-3 items-center bg-white-/10 border-black/10 dark:bg-black/10 dark:border-gray-100/5 border backdrop-blur-lg rounded-full px-4 py-3">
           {DATA.socials.map((social: any, index: number) => (
             <Tooltip key={index}>
               <TooltipTrigger asChild>
                 <Link
                   to={social.url}
                   target="_blank"
-                  className={`p-2 rounded-md hover:-translate-y-1 transition-all duration-200 ${
+                  className={`p-2 rounded-full hover:-translate-y-1 transition-all duration-200 ${
                     theme === "dark"
                       ? "bg-black/5 text-gray-200 hover:text-white"
                       : "bg-white/10 text-gray-800 hover:text-gray-800"
