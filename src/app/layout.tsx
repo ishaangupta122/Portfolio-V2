@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/context/theme-provider";
-// @ts-ignore - allow side-effect global CSS import without module typings
+import { DynamicFavicon } from "@/components/dynamic-favicon";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Ishaan Gupta",
   description: "Portfolio of Ishaan Gupta",
+  icons: {
+    icon: "/user_light.png",
+  },
 };
 
 export default function RootLayout({
@@ -22,11 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link id="favicon" rel="icon" href="/user_light.png" />
-      </head>
       <body className={inter.className}>
         <ThemeProvider defaultTheme="light" storageKey="next-ui-theme">
+          <DynamicFavicon />
           {children}
         </ThemeProvider>
       </body>
