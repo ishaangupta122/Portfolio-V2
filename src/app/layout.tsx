@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/context/theme-provider";
-// @ts-ignore - allow side-effect global CSS import without module typings
 import "./globals.css";
 import { DATA } from "../lib/data";
 
@@ -14,8 +13,9 @@ const inter = Inter({
 const { about } = DATA;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(about.url || "https://ishaangupta.me"),
   title: {
-    default: `${about.name} | ${about.title}`,
+    default: about.name,
     template: `%s | ${about.name}`,
   },
   description: about.description,
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${about.name} | ${about.title}`,
     description: about.description,
-    url: "https://ishaangupta.me",
+    url: about.url,
     siteName: about.name,
-    type: "profile",
+    type: "website",
     locale: "en_US",
     images: [
       {
@@ -53,11 +53,24 @@ export const metadata: Metadata = {
     creator: "@ishaangupta05",
     images: about.image ? [about.image] : undefined,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "",
+    yandex: "",
+  },
   icons: {
     icon: "/user_dark.png",
   },
-  metadataBase: new URL("https://ishaangupta.me"),
 };
 
 export default function RootLayout({
@@ -68,10 +81,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link id="favicon" rel="icon" href="/user_light.png" />
+        <link id="favicon" rel="icon" href="/user_dark.png" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="light" storageKey="next-ui-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="next-ui-theme">
           {children}
         </ThemeProvider>
       </body>

@@ -11,6 +11,7 @@ export interface About {
   twitter: string;
   github: string;
   instagram: string;
+  url?: string;
 }
 
 export interface Experience {

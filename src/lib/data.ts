@@ -16,6 +16,7 @@ export const DATA: Data = {
     twitter: "https://x.com/ishaangupta05",
     github: "https://github.com/ishaangupta122",
     instagram: "https://www.instagram.com/ishaangupta___/",
+    url: "https://ishaangupta.me",
   },
 
   experiences: [
@@ -231,4 +232,4 @@ export const DATA: Data = {
       url: "https://twitter.com/ishaangupta05",
     },
   ],
-};
+} as const;
