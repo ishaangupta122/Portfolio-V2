@@ -17,7 +17,7 @@ export default function Education() {
       </ScrollAnimation>
       <div className="space-y-2">
         {DATA.educations.map((edu: any) => (
-          <ScrollAnimation key={edu.id} direction="up" delay={edu.id * 0.05}>
+          <ScrollAnimation key={edu.id} direction="up" delay={edu.id * 0.1}>
             <Link
               href={edu.url}
               target="_blank"

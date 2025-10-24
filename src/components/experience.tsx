@@ -70,7 +70,7 @@ export default function Experience() {
           setOpenIndices(indices);
         }}>
         {DATA.experiences.map((exp: any) => (
-          <ScrollAnimation key={exp.id} direction="up" delay={exp.id * 0.05}>
+          <ScrollAnimation key={exp.id} direction="up" delay={exp.id * 0.1}>
             <AccordionItem value={`item-${exp.id}`} className="border-none">
               <div className="flex items-start gap-4 relative">
                 <Link href={exp.url} target="_blank">

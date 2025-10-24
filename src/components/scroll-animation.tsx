@@ -1,14 +1,8 @@
 "use client";
 
+import { ScrollAnimationProps } from "@/lib/types";
 import { motion, useInView, type Variants } from "framer-motion";
 import { useRef, useMemo } from "react";
-
-interface ScrollAnimationProps {
-  children: React.ReactNode;
-  direction?: "up" | "down" | "left" | "right";
-  delay?: number;
-  duration?: number;
-}
 
 const DIRECTION_OFFSET = {
   up: { y: 20 },
@@ -21,7 +15,7 @@ export const ScrollAnimation = ({
   children,
   direction = "up",
   delay = 0,
-  duration = 0.6,
+  duration = 0.4,
 }: ScrollAnimationProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -34,7 +28,7 @@ export const ScrollAnimation = ({
     () => ({
       hidden: {
         opacity: 0,
-        filter: "blur(6px)",
+        filter: "blur(8px)",
         ...DIRECTION_OFFSET[direction],
       },
       visible: {

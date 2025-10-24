@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import React from "react";
 
 export interface About {
   image?: string;
@@ -83,20 +84,9 @@ export interface TypewriterProps {
   pause?: number;
 }
 
-export interface FadeBlurStaggerItemProps {
-  children: ReactNode;
-  index: number;
-  delayPerItem?: number;
+export interface ScrollAnimationProps {
+  children: React.ReactNode;
+  direction?: "up" | "down" | "left" | "right";
+  delay?: number;
   duration?: number;
-}
-
-export interface StaggerProps {
-  children: ReactNode;
-  stagger?: number;
-  className?: string;
-}
-
-export interface StaggerItemProps {
-  children: ReactNode;
-  className?: string;
 }

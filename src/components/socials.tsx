@@ -17,7 +17,7 @@ function MobileBar({ theme }: { theme: string }) {
   return (
     <TooltipProvider>
       <div className="md:hidden fixed inset-x-4 bottom-5 z-50 pointer-events-auto">
-        <div className="mx-auto w-fit flex gap-3 items-center bg-white/10 border-black/10 dark:bg-black/10 dark:border-gray-100/5 border backdrop-blur-lg rounded-full px-4 py-3">
+        <div className="mx-auto w-fit flex gap-3 items-center bg-white/10 border-black/10 dark:bg-black/10 dark:border-gray-100/5 border backdrop-blur-lg rounded-full px-4 py-2">
           {DATA.socials.map((social: any, index: number) => (
             <Tooltip key={index}>
               <TooltipTrigger asChild>

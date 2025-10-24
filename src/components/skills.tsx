@@ -15,8 +15,11 @@ export default function Skills() {
       </ScrollAnimation>
 
       <div className="flex items-start justify-start flex-wrap gap-1.5">
-        {DATA.skills.map((skill: any, i: any) => (
-          <ScrollAnimation key={skill.id} direction="up">
+        {DATA.skills.map((skill: any) => (
+          <ScrollAnimation
+            key={skill.id}
+            direction="up"
+            delay={skill.id * 0.03}>
             <div
               className={`${
                 theme === "dark"
