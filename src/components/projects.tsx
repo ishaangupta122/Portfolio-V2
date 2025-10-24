@@ -5,21 +5,26 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
-import { DATA } from "@/data";
+import { DATA } from "@/lib/data";
 import { useTheme } from "@/context/theme-provider";
 import { ScrollAnimation } from "./scroll-animation";
 
 export default function Projects() {
   return (
     <section className="max-w-2xl mx-auto">
-      <ScrollAnimation>
+      <ScrollAnimation direction="up">
         <h2 className={`text-2xl inter-semibold mb-3`}>Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {DATA.projects.map((project: any) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
       </ScrollAnimation>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {DATA.projects.map((project: any) => (
+          <ScrollAnimation
+            key={project.id}
+            direction="up"
+            delay={project.id * 0.05}>
+            <ProjectCard project={project} />
+          </ScrollAnimation>
+        ))}
+      </div>
     </section>
   );
 }
@@ -88,7 +93,7 @@ export function ProjectCard({ project }: { project: any }) {
         theme === "dark"
           ? "bg-black/20 text-white border-white/10"
           : "bg-white/20 text-black border-transparent"
-      } flex flex-col border shadow-md shadow-black/10 rounded-lg`}>
+      } flex flex-col border shadow-md shadow-black/10 rounded-lg h-full`}>
       {/* Media */}
       <div
         className={`relative h-[200px] w-full rounded-t-md px-4 pt-4 ${
@@ -106,7 +111,7 @@ export function ProjectCard({ project }: { project: any }) {
                 width={500}
                 height={300}
                 loading="lazy"
-                quality={85}
+                quality={75}
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
                 sizes="(max-width: 768px) 100vw, 50vw"

@@ -1,6 +1,6 @@
 "use client";
 
-import type { InitialsAvatarProps } from "@/types";
+import type { InitialsAvatarProps } from "@/lib/types";
 
 const InitialsAvatar: React.FC<InitialsAvatarProps> = ({ name, style }) => {
   const getInitials = (input: string): string => {

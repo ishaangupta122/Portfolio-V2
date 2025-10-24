@@ -1,56 +1,56 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "@/context/theme-provider";
 import TypewriterEffect from "./typewrite-effect";
 import SocialBar from "./socials";
-import { DATA } from "@/data";
-import { Stagger } from "./stagger-effect";
+import { DATA } from "@/lib/data";
 import { ScrollAnimation } from "./scroll-animation";
 import { LottieAnimation } from "./lottie-animation";
 
 export default function AboutSection() {
   const { theme } = useTheme();
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-  const checkScreen = useCallback(() => {
-    setIsLargeScreen(window.innerWidth >= 1024);
-  }, []);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "right">(
+    typeof window !== "undefined" && window.innerWidth >= 1024 ? "right" : "up"
+  );
 
   useEffect(() => {
-    checkScreen();
-
-    let timeoutId: ReturnType<typeof setTimeout>;
     const handleResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(checkScreen, 150);
+      const newDirection = window.innerWidth >= 1024 ? "right" : "up";
+      if (newDirection !== scrollDirection) {
+        setScrollDirection(newDirection);
+      }
     };
 
+    // Use matchMedia for better performance
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    const handleMediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      setScrollDirection(e.matches ? "right" : "up");
+    };
+
+    // Initial check
+    handleMediaChange(mediaQuery);
+
+    // Modern browsers
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleMediaChange);
+      return () => mediaQuery.removeEventListener("change", handleMediaChange);
+    }
+
+    // Fallback for older browsers
     window.addEventListener("resize", handleResize);
-    return () => {
-      clearTimeout(timeoutId);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [checkScreen]);
-
-  const Container = isLargeScreen ? Stagger : "section";
-  const Item = isLargeScreen ? Stagger.Item : ScrollAnimation;
+    return () => window.removeEventListener("resize", handleResize);
+  }, [scrollDirection]);
 
   return (
-    <Container className="h-full w-full lg:w-[35%] lg:max-w-xl flex flex-col gap-4 px-6 lg:py-14 pt-14 lg:fixed">
-      {/* Animation or Image */}
-      <div className="w-full">
-        {/* <img
-          src={DATA.about.image}
-          alt={DATA.about.name}
-          className="w-35 h-35 md:w-45 md:h-45 object-cover rounded-full cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.03]"
-        /> */}
+    <section className="h-full w-full lg:w-[35%] lg:max-w-xl flex flex-col gap-4 px-6 lg:py-14 pt-14 lg:fixed">
+      <ScrollAnimation direction={scrollDirection} delay={0.1}>
         <LottieAnimation />
-      </div>
+      </ScrollAnimation>
 
-      {/* Text content */}
       <div className="mt-1 flex flex-col gap-1">
-        <Item>
+        <ScrollAnimation direction={scrollDirection} delay={0.2}>
           <div
             className={`flex flex-col text-4xl md:text-5xl inter-semibold tracking-tight ${
               theme === "dark" ? "text-[#eef0f3]" : ""
@@ -60,9 +60,9 @@ export default function AboutSection() {
               {DATA.about.name}
             </span>
           </div>
-        </Item>
+        </ScrollAnimation>
 
-        <Item>
+        <ScrollAnimation direction={scrollDirection} delay={0.3}>
           <div
             className={`inter-bold bg-gradient-to-r bg-clip-text text-transparent ${
               theme === "dark"
@@ -73,22 +73,21 @@ export default function AboutSection() {
               <TypewriterEffect text={DATA.about.title} speed={50} />
             </span>
           </div>
-        </Item>
+        </ScrollAnimation>
 
-        <Item>
+        <ScrollAnimation direction={scrollDirection} delay={0.4}>
           <p
             className={`text-sm tracking-tight inter-medium ${
               theme === "dark" ? "text-gray-300/90" : "text-gray-700"
             }`}>
             {DATA.about.description}
           </p>
-        </Item>
+        </ScrollAnimation>
       </div>
 
-      {/* Social links */}
-      <Item>
+      <ScrollAnimation direction={scrollDirection} delay={0.5}>
         <SocialBar />
-      </Item>
-    </Container>
+      </ScrollAnimation>
+    </section>
   );
 }

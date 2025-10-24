@@ -7,7 +7,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { useTheme } from "@/context/theme-provider";
-import { DATA } from "@/data";
+import { DATA } from "@/lib/data";
 import { Minus } from "lucide-react";
 import { useState, useEffect } from "react";
 import { FaCheckCircle } from "react-icons/fa";
@@ -52,7 +52,7 @@ export default function Experience() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <ScrollAnimation>
+      <ScrollAnimation direction="up">
         <h2 className={`text-2xl inter-semibold mb-4`}>Experience</h2>
       </ScrollAnimation>
       <Accordion
@@ -70,7 +70,7 @@ export default function Experience() {
           setOpenIndices(indices);
         }}>
         {DATA.experiences.map((exp: any) => (
-          <ScrollAnimation key={exp.id}>
+          <ScrollAnimation key={exp.id} direction="up" delay={exp.id * 0.05}>
             <AccordionItem value={`item-${exp.id}`} className="border-none">
               <div className="flex items-start gap-4 relative">
                 <Link href={exp.url} target="_blank">
@@ -80,6 +80,8 @@ export default function Experience() {
                       alt={exp.company}
                       width={44}
                       height={44}
+                      loading="lazy"
+                      quality={75}
                       className="w-11 h-11 rounded-full object-cover hover:scale-105 transition-all duration-200 shadow-md shadow-black/10"
                     />
                   ) : (

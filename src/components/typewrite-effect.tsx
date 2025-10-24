@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import type { TypewriterProps } from "@/types";
+import type { TypewriterProps } from "@/lib/types";
 
 const TypewriterEffect = ({
   text,

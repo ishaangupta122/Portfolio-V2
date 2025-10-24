@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/theme-provider";
-import { DATA } from "@/data";
+import { DATA } from "@/lib/data";
 import { Minus } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,12 +12,12 @@ export default function Education() {
   const { theme } = useTheme();
   return (
     <section className="max-w-2xl mx-auto">
-      <ScrollAnimation>
+      <ScrollAnimation direction="up">
         <h2 className={`text-2xl inter-semibold mb-2`}>Education</h2>
       </ScrollAnimation>
       <div className="space-y-2">
         {DATA.educations.map((edu: any) => (
-          <ScrollAnimation key={edu.id}>
+          <ScrollAnimation key={edu.id} direction="up" delay={edu.id * 0.05}>
             <Link
               href={edu.url}
               target="_blank"
@@ -29,6 +29,8 @@ export default function Education() {
                     alt={`${edu.institution} Logo`}
                     width={44}
                     height={44}
+                    loading="lazy"
+                    quality={75}
                     className="min-w-11 min-h-11 object-cover rounded-full transition-transform duration-200 ease-in-out group-hover:scale-105 shadow-md shadow-black/10"
                   />
                 ) : (
