@@ -98,6 +98,28 @@ export const DATA: Data = {
   projects: [
     {
       id: 1,
+      title: "Cloudify Frontend",
+      description:
+        "Built a modern and responsive UI frontend with Next.js, ShadcnUI, and TailwindCSS for Cloudify using Figma Design.",
+      images: ["/cloudify_img_2.png", "/cloudify_img_1.png"],
+      videos: [],
+      techStack: ["Next.js", "Node.js", "TailwindCSS", "ShadcnUI"],
+      websiteUrl: "https://cloudify-frontend.vercel.app/",
+      sourceUrl: "https://github.com/ishaangupta122/Cloudify_Frontend.git",
+    },
+    {
+      id: 2,
+      title: "Grocery Store Frontend",
+      description:
+        "Built an intuitive and responsive grocery store frontend with React and TailwindCSS. Includes dynamic product listings and a shopping cart",
+      images: ["/grocery_img.png"],
+      videos: ["/grocery_store_video.mp4"],
+      techStack: ["React", "Node.js", "TailwindCSS"],
+      websiteUrl: "https://grocery-store-wheat.vercel.app/",
+      sourceUrl: "https://github.com/ishaangupta122/GroceryStore.git",
+    },
+    {
+      id: 3,
       title: "Thapar Polytechnic College",
       description:
         "Developed a comprehensive web portal for Thapar Polytechnic College using React and Node.js. Features include dynamic data fetching, responsive design, and an modern UI.",
@@ -115,18 +137,7 @@ export const DATA: Data = {
       sourceUrl: "https://github.com/ishaangupta122/tpc-website.git",
     },
     {
-      id: 2,
-      title: "Grocery Store Frontend",
-      description:
-        "Built an intuitive and responsive grocery store frontend with React and TailwindCSS. Includes dynamic product listings and a shopping cart",
-      images: ["/grocery_img.png"],
-      videos: ["/grocery_store_video.mp4"],
-      techStack: ["React", "Node.js", "TailwindCSS"],
-      websiteUrl: "https://grocery-store-wheat.vercel.app/",
-      sourceUrl: "https://github.com/ishaangupta122/GroceryStore.git",
-    },
-    {
-      id: 3,
+      id: 4,
       title: "Course Selling Platform",
       description:
         "Engineered a full-stack platform for selling courses online using React, Node.js, and Razorpay for payments. Instructors can manage content while students securely purchase and access materials.",
@@ -145,7 +156,7 @@ export const DATA: Data = {
       sourceUrl: "https://github.com/ishaangupta122/CoursesPlatform.git",
     },
     {
-      id: 4,
+      id: 5,
       title: "TPC Admin Dashboard",
       description:
         "Designed an admin dashboard for TPC website owners using React, TypeScript, and PrimeReact. Management of faculty, events, success stories, and more can be done with this dashboard.",
@@ -164,7 +175,7 @@ export const DATA: Data = {
       sourceUrl: "https://github.com/ishaangupta122/tpc-website.git",
     },
     {
-      id: 5,
+      id: 6,
       title: "Pixera (Multimedia Hub)",
       description:
         "Created Pixera, a multimedia hub leveraging the Pexels API for stunning image searches. Built with React and TailwindCSS, it offers fast search queries and a sleek, responsive gallery interface.",
@@ -179,23 +190,6 @@ export const DATA: Data = {
       ],
       websiteUrl: "https://pixera-app.vercel.app/",
       sourceUrl: "https://github.com/ishaangupta122/PixeraApp.git",
-    },
-    {
-      id: 6,
-      title: "News App",
-      description:
-        "Developed a modern News App that fetches real-time news articles using the News API. Features keyword search and category filtering, built with React and styled efficiently with TailwindCSS.",
-      images: ["/news_img.png"],
-      videos: [],
-      techStack: [
-        "React",
-        "Node.js",
-        "TailwindCSS",
-        "News API",
-        "Search Query",
-      ],
-      websiteUrl: "https://news-app-kappa-puce.vercel.app/",
-      sourceUrl: "https://github.com/ishaangupta122/NewsApp.git",
     },
   ],
 
