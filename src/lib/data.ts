@@ -157,10 +157,10 @@ export const DATA: Data = {
     },
     {
       id: 5,
-      title: "TPC Admin Dashboard",
+      title: "Restaurant Admin Dashboard",
       description:
-        "Designed an admin dashboard for TPC website owners using React, TypeScript, and PrimeReact. Management of faculty, events, success stories, and more can be done with this dashboard.",
-      images: ["/tpc_admin_img.png"],
+        "Designed an admin dashboard for Restaurant using React, TypeScript, and PrimeReact. Management of orders, reviews, and more can be done with this dashboard.",
+      images: ["/food_admin_img.png"],
       videos: [],
       techStack: [
         "React",
@@ -171,8 +171,9 @@ export const DATA: Data = {
         "TailwindCSS",
         "PrimeReact",
       ],
-      websiteUrl: "https://tpc-website-admin.vercel.app/",
-      sourceUrl: "https://github.com/ishaangupta122/tpc-website.git",
+      websiteUrl: "https://restaurant-platform-admin.vercel.app/",
+      sourceUrl:
+        "https://github.com/ishaangupta122/Restaurant-Ecommerce-Platform.git",
     },
     {
       id: 6,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/theme-provider";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const InteractionGradient = () => {
@@ -11,8 +11,20 @@ const InteractionGradient = () => {
   const [isPointerDevice, setIsPointerDevice] = useState(true);
 
   // motion values avoid re-renders
-  const x = useMotionValue(0.5);
-  const y = useMotionValue(0.5);
+  const mouseX = useMotionValue(0.5);
+  const mouseY = useMotionValue(0.5);
+
+  // Smooth spring animation for gradient movement
+  const x = useSpring(mouseX, {
+    stiffness: 150,
+    damping: 30,
+    mass: 0.1,
+  });
+  const y = useSpring(mouseY, {
+    stiffness: 150,
+    damping: 30,
+    mass: 0.1,
+  });
 
   useEffect(() => {
     // Check if the device has a fine pointer (like mouse)
@@ -34,15 +46,15 @@ const InteractionGradient = () => {
     if (!isPointerDevice) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      x.set(e.clientX / window.innerWidth);
-      y.set(e.clientY / window.innerHeight);
+      mouseX.set(e.clientX / window.innerWidth);
+      mouseY.set(e.clientY / window.innerHeight);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [x, y, isPointerDevice]);
+  }, [mouseX, mouseY, isPointerDevice]);
 
-  // map motion values to gradient string (no spring, instant tracking)
+  // map motion values to gradient string with smooth spring
   const background = useTransform([x, y], ([x, y]: number[]) => {
     if (theme === "light") {
       return `
@@ -77,6 +89,7 @@ const InteractionGradient = () => {
         pointerEvents: "none",
         zIndex: -1,
         background,
+        willChange: "background",
       }}
     />
   );

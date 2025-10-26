@@ -98,8 +98,8 @@ export function ProjectCard({ project }: { project: any }) {
       <div
         className={`relative h-[200px] w-full rounded-t-md px-4 pt-4 ${
           theme === "dark"
-            ? "bg-gradient-to-r from-[#82DFE4] to-[#3873BF]"
-            : "bg-gradient-to-r from-[#EDA47D] to-[#A079EC]"
+            ? "bg-linear-to-r from-[#82DFE4] to-[#3873BF]"
+            : "bg-linear-to-r from-[#EDA47D] to-[#A079EC]"
         }`}>
         <div className="relative h-full w-full flex items-center justify-center">
           {media.type === "image" ? (
@@ -183,7 +183,7 @@ export function ProjectCard({ project }: { project: any }) {
       </div>
 
       {/* Content */}
-      <div className="px-3 pb-3 m-0 flex flex-col flex-grow">
+      <div className="px-3 pb-3 m-0 flex flex-col grow">
         <h3 className="text-base inter-medium my-1">{project.title}</h3>
         <p
           className={`${

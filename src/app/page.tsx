@@ -3,11 +3,14 @@
 import Profile from "@/components/profile";
 import InteractionGradient from "@/components/interaction-gradient";
 import { FixedGradient } from "@/components/fixed-gradient";
-import { useEffect } from "react";
+import { PageLoader } from "@/components/page-loader";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { useEffect, useState } from "react";
 import { useTheme } from "@/context/theme-provider";
 
 export default function Home() {
   const { theme } = useTheme();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const favicon = document.getElementById(
@@ -20,9 +23,16 @@ export default function Home() {
 
   return (
     <>
-      <FixedGradient />
-      <InteractionGradient />
-      <Profile />
+      {!isLoaded ? (
+        <PageLoader onLoadingComplete={() => setIsLoaded(true)} />
+      ) : (
+        <>
+          <ScrollProgress />
+          <FixedGradient />
+          <InteractionGradient />
+          <Profile />
+        </>
+      )}
     </>
   );
 }

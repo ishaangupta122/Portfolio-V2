@@ -89,4 +89,14 @@ export interface ScrollAnimationProps {
   direction?: "up" | "down" | "left" | "right";
   delay?: number;
   duration?: number;
+  stagger?: boolean;
+  staggerDelay?: number;
+  viewport?: {
+    once?: boolean;
+    amount?: number;
+  };
+}
+
+export interface PageLoaderProps {
+  onLoadingComplete?: () => void;
 }

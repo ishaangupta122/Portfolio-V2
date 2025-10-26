@@ -55,21 +55,19 @@ export default function AboutSection() {
             className={`flex flex-col text-4xl md:text-5xl inter-semibold tracking-tight ${
               theme === "dark" ? "text-[#eef0f3]" : ""
             }`}>
-            <span className="text-[1.9rem] md:text-[2.2rem]">Hey, I'm </span>
-            <span className="text-[1.9rem] md:text-[2.2rem]">
-              {DATA.about.name}
-            </span>
+            <span className="text-[2.2rem]">Hey, I'm </span>
+            <span className="text-[2.2rem]">{DATA.about.name}</span>
           </div>
         </ScrollAnimation>
 
         <ScrollAnimation direction={scrollDirection} delay={0.3}>
           <div
-            className={`inter-bold bg-gradient-to-r bg-clip-text text-transparent ${
+            className={`inter-bold bg-linear-to-r bg-clip-text text-transparent ${
               theme === "dark"
                 ? "from-[#3be6f6] to-[#093adc]"
                 : "from-[#ff7124] to-[#6e26ff]"
             }`}>
-            <span className="text-[1.4rem] md:text-[1.7rem]">
+            <span className="text-[1.8rem]">
               <TypewriterEffect text={DATA.about.title} speed={50} />
             </span>
           </div>

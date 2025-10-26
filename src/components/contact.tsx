@@ -4,6 +4,7 @@ import { useTheme } from "@/context/theme-provider";
 import { DATA } from "@/lib/data";
 import Link from "next/link";
 import { ScrollAnimation } from "./scroll-animation";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const { theme } = useTheme();
@@ -15,31 +16,46 @@ export default function Contact() {
           Get in Touch
         </h2>
       </ScrollAnimation>
-      <ScrollAnimation direction="up">
+      <ScrollAnimation direction="up" delay={0.1}>
         <div
           className={`text-[0.95rem] md:text-base inter-medium tracking-tight ${
             theme === "dark" ? "text-gray-300" : "text-gray-700"
           }`}>
           Want to chat? DM me on{" "}
-          <Link
-            href={DATA.contact.linkedin}
-            target="_blank"
-            className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
-            LinkedIn
-          </Link>
+          <motion.span
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{ display: "inline-block" }}>
+            <Link
+              href={DATA.contact.linkedin}
+              target="_blank"
+              className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
+              LinkedIn
+            </Link>
+          </motion.span>
           {" / "}
-          <Link
-            href={DATA.contact.twitter}
-            target="_blank"
-            className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
-            X
-          </Link>
+          <motion.span
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{ display: "inline-block" }}>
+            <Link
+              href={DATA.contact.twitter}
+              target="_blank"
+              className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
+              X
+            </Link>
+          </motion.span>
           , or just send an email at{" "}
-          <Link
-            href={`mailto:${DATA.contact.mail}`}
-            className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
-            {DATA.contact.mail}
-          </Link>
+          <motion.span
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{ display: "inline-block" }}>
+            <Link
+              href={`mailto:${DATA.contact.mail}`}
+              className="font-medium dark:text-blue-400 text-blue-500 hover:underline">
+              {DATA.contact.mail}
+            </Link>
+          </motion.span>
           .
         </div>
       </ScrollAnimation>
