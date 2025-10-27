@@ -10,7 +10,7 @@ import { useTheme } from "@/context/theme-provider";
 
 export default function Home() {
   const { theme } = useTheme();
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const favicon = document.getElementById(
@@ -23,16 +23,16 @@ export default function Home() {
 
   return (
     <>
-      {!isLoaded ? (
+      {/* {!isLoaded ? (
         <PageLoader onLoadingComplete={() => setIsLoaded(true)} />
-      ) : (
-        <>
-          <ScrollProgress />
-          <FixedGradient />
-          <InteractionGradient />
-          <Profile />
-        </>
-      )}
+      ) : ( */}
+      <>
+        {/* <ScrollProgress /> */}
+        <FixedGradient />
+        <InteractionGradient />
+        <Profile />
+      </>
+      {/* )} */}
     </>
   );
 }
